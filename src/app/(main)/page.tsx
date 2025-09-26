@@ -25,7 +25,7 @@ const MainPage = () => {
   return (
     <div className="relative flex h-screen  flex-col items-center justify-center overflow-hidden">
       <ShaderAnimation/>
-      <div className="absolute pointer-events-none z-10  leading-none font-semibold tracking-tighter whitespace-pre-wrap text-white">
+      <div className="absolute z-10   leading-none font-semibold tracking-tighter whitespace-pre-wrap text-white">
       <AnimatePresence>
         {isShow && (
           <motion.div
@@ -36,21 +36,21 @@ const MainPage = () => {
           >
             <TextShimmer
               duration={1.2}
-              className="text-4xl font-semibold [--base-color:theme(colors.white)] [--base-gradient-color:theme(colors.blue.200)] dark:[--base-color:theme(colors.white)] dark:[--base-gradient-color:theme(colors.blue.400)]"
+              className="  text-4xl font-semibold [--base-color:theme(colors.white)] [--base-gradient-color:theme(colors.blue.200)] dark:[--base-color:theme(colors.white)] dark:[--base-gradient-color:theme(colors.blue.400)]"
             >
-              Welcome MustUi Studio
+              Welcome MustUI Studio
             </TextShimmer>
           </motion.div>
         )}
       </AnimatePresence>
-     <div className="space-y-6 w-full space-x-4  " >
+     <div className="space-y-6  space-x-4  " >
       <AnimatePresence>
         {showGetStarted && (
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.5, ease: "easeInOut" }}
-            className="text-4xl font-semibold"
+            className=" w-full text-center  text-4xl font-semibold"
            
           >
            Start now, make a difference.
@@ -63,8 +63,8 @@ const MainPage = () => {
        animate={{ opacity: 1, y: 0 }}
      transition={{ duration: 1.5, ease: "easeInOut" }}
      className="
-     bg-white text-zinc-900 border w-24   ml-auto  border-zinc-300 shadow-sm shadow-zinc-50/20  hover:bg-zinc-50 hover:shadow-md hover:shadow-zinc-200/30  active:bg-zinc-100 active:shadow-inner active:shadow-zinc-200/40 rounded-md h-10  flex items-center justify-center transition-colors  duration-200 ease-in-out">
-        Get started 
+     text-zinc-200 w-24 h-10  ml-auto underline hover:no-underline flex items-center justify-center cursor-pointer space-x-2 ">
+      Get started
       </motion.div>
      )}
     </div>

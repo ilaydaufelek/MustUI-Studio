@@ -18,7 +18,7 @@ export function TextShimmer({
   className,
   duration = 2,
   spread = 2,
-  fade = false, // default false
+  fade = false, 
 }: TextShimmerProps) {
   const MotionComponent = motion(Component as keyof JSX.IntrinsicElements);
 

@@ -3,18 +3,20 @@ import { ShaderAnimation } from "@/components/shader-animation";
 import { TextShimmer } from "@/components/text-shimmer";
 import { motion, AnimatePresence } from "framer-motion";
 import { useEffect, useState } from "react";
-
+import { useRouter } from "next/navigation";
 const MainPage = () => {
  const [isShow, setIsShow] = useState(true);
   const [showGetStarted, setShowGetStarted] = useState(false);
 
-
+   const router=useRouter()
   useEffect(() => {
     const timer = setTimeout(() => setIsShow(false), 5000); 
     return () => clearTimeout(timer);
   }, []);
 
- 
+   const handleClick=()=>{
+    router.push('/studio')
+   }
   useEffect(() => {
     if (!isShow) {
       const timer = setTimeout(() => setShowGetStarted(true), 1500); 
@@ -36,7 +38,7 @@ const MainPage = () => {
           >
             <TextShimmer
               duration={1.2}
-              className="  text-4xl font-semibold [--base-color:theme(colors.white)] [--base-gradient-color:theme(colors.blue.200)] dark:[--base-color:theme(colors.white)] dark:[--base-gradient-color:theme(colors.blue.400)]"
+              className="  text-4xl font-semibold [--base-color:theme(colors.white)] dark:[--base-gradient-color:theme(colors.blue.400)]"
             >
               Welcome MustUI Studio
             </TextShimmer>
@@ -58,14 +60,15 @@ const MainPage = () => {
         )}
       </AnimatePresence>
      {showGetStarted && (
-         <motion.div
+         <motion.button
+         onClick={handleClick}
        initial={{ opacity: 0, y: 50 }}
        animate={{ opacity: 1, y: 0 }}
      transition={{ duration: 1.5, ease: "easeInOut" }}
      className="
-     text-zinc-200 w-24 h-10  ml-auto underline hover:no-underline flex items-center justify-center cursor-pointer space-x-2 ">
+     text-zinc-200 w-24 h-10  ml-auto underline hover:no-underline hover:transition-all flex items-center justify-center cursor-pointer space-x-2 ">
       Get started
-      </motion.div>
+      </motion.button>
      )}
     </div>
     

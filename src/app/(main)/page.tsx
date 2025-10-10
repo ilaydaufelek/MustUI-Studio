@@ -1,6 +1,6 @@
 'use client'
-import { ShaderAnimation } from "@/components/shader-animation";
-import { TextShimmer } from "@/components/text-shimmer";
+import { ShaderAnimation } from "@/components/ui/shader-animation";
+import { TextShimmer } from "@/components/ui/text-shimmer";
 import { motion, AnimatePresence } from "framer-motion";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";

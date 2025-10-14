@@ -15,8 +15,10 @@
     "must-ui-v2": "^1.0.2",
     "next": "15.5.4",
     "next-themes": "^0.4.6",
+    "prism-react-renderer": "^2.4.1",
     "react": "19.1.0",
     "react-dom": "19.1.0",
+    "react-syntax-highlighter": "^15.6.6",
     "tailwind-merge": "^3.3.1",
     "three": "^0.180.0",
     "zustand": "^5.0.8"
@@ -27,6 +29,7 @@
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "@types/react-syntax-highlighter": "^15.5.13",
     "@types/three": "^0.180.0",
     "eslint": "^9",
     "eslint-config-next": "15.5.4",

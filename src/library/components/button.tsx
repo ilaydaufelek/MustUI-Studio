@@ -1,6 +1,6 @@
 import clsx from "clsx";
 
-type  ButtonProps={
+interface  ButtonProps extends Omit<React.ButtonHTMLAttributes<HTMLButtonElement>,'size' | 'onClick'>{
     children?:React.ReactNode;
     onClick?: () => void;
     size?:'sm'| 'md' | 'lg'   ;
@@ -15,7 +15,8 @@ onClick,
 size="md",
 variant="primary",
 disabled=false,
-className
+className,
+...rest
 }:ButtonProps)=>{
      
     const baseStyles="rounded-md font-medium  transition-colors"
@@ -43,7 +44,8 @@ className
         variants[variant],
         disabled && "opacity-50 cursor-not-allowed",
         className
-        )}>
+        )}
+        {...rest}>
          {children}
 
         </button>

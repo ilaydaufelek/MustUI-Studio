@@ -5,12 +5,16 @@ import { ThemeToggle } from "@/components/theme-toggle";
 
 import {Button} from 'must-ui-v2'
 
-import { Github } from "lucide-react";
+import { Code2, Github } from "lucide-react";
 import { SearchInput } from "@/components/search-input";
+import { ModalProvider } from "@/provider/modal-provider";
+import { useModal } from "@/hooks/use-modal-store";
+import { Input } from "@/library/components/input";
 
 
 const StudioPage = () => {
 
+  const{onOpen}= useModal()
 
   return (
     <div className="dark:bg-black bg-white min-h-screen">
@@ -29,15 +33,20 @@ const StudioPage = () => {
       <div className="min-h-screen flex  justify-center  mt-4 md:mt-8 ">
         <div className="h-full max-w-[1400px] w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 p-6 ">
           
-        <div className="border border-zinc-600 rounded-md w-full h-[200px] dark:hover:bg-zinc-900  hover:bg-zinc-100/90 transition-all flex items-center justify-center " >
-            <Button
-            variant="secondary"
-
-            >button</Button>
+        <div className="relative border  border-zinc-600 rounded-md w-full h-[200px] dark:hover:bg-zinc-900  hover:bg-zinc-100/90 transition-all flex items-center justify-center " >
+          <div onClick={()=>onOpen('buttonModal')}  className="absolute top-0 right-0 m-2 bg-zinc-700 dark:bg-white dark:text-zinc-800 text-white px-2  rounded-md cursor-pointer"><Code2 className="w-5 h-5" /></div>
+            <Button 
+            size="md"
+            variant="primary">button</Button>
           </div>
-          <div className="border border-zinc-600 rounded-md w-full h-[200px] dark:hover:bg-zinc-900  hover:bg-zinc-100/90 transition-all flex items-center justify-center " >
-       <Button 
-       size="md" >merhaba</Button>
+
+          <div className=" relative border border-zinc-600 rounded-md w-full h-[200px] dark:hover:bg-zinc-900  hover:bg-zinc-100/90 transition-all flex items-center justify-center " >
+          <div onClick={()=>onOpen('inputModal')}  className="absolute top-0 right-0 m-2 bg-zinc-700 dark:bg-white dark:text-zinc-800 text-white px-2  rounded-md cursor-pointer"><Code2 className="w-5 h-5" /></div>
+          <Input 
+          
+          variant="filled"
+          size="lg"
+          />
           </div>
           <div className="border border-zinc-600 rounded-md w-full h-[200px] dark:hover:bg-zinc-900  hover:bg-zinc-100/90 transition-all flex items-center justify-center " >
          3.kutu
@@ -51,6 +60,7 @@ const StudioPage = () => {
           
       </div>
       </div>
+      <ModalProvider/>
     </div>
   );
 };

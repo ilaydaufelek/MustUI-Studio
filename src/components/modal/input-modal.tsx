@@ -10,7 +10,7 @@ export const InputModal=()=>{
 
   const code=  
   `import { Input } from "must-ui-v2";
-  
+
   <Input 
   variant="filled"
   size="lg"`
@@ -36,7 +36,7 @@ export const InputModal=()=>{
         <button  onClick={onCopy}  className="absolute right-6 m-3 cursor-pointer  " >
          {copied ? <CheckCheck className="w-4 h-4" /> :  <Copy className='w-4 h-4' /> }
           </button>
-        <CodeBlock children={code} /> 
+        <CodeBlock>{code}</CodeBlock> 
       </div>
     </div>
     )

@@ -7,7 +7,7 @@ import { Code2, Github } from "lucide-react";
 import { SearchInput } from "@/components/search-input";
 import { ModalProvider } from "@/provider/modal-provider";
 import { useModal } from "@/hooks/use-modal-store";
-import { Dialog, DialogCancel, DialogContent, DialogDescription, DialogFooter, DialogSubmit, DialogTitle, DialogTrigger } from "@/library/components/dialog";
+import { Dialog, DialogCancel, DialogContent, DialogDescription, DialogFooter, DialogSubmit, DialogTitle, DialogTrigger } from "must-ui";
 
 
 

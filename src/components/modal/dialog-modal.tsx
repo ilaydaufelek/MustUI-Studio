@@ -8,7 +8,7 @@ import { useState } from "react"
 export const DialogModal=()=>{
   const[copied,setCopied]=useState(false)
 
-  const code=`  import { Dialog } from "must-ui";
+  const code=`  import { Dialog, DialogCancel, DialogContent, DialogDescription, DialogFooter, DialogSubmit, DialogTitle, DialogTrigger } from "must-ui";
 
   <Dialog>
   <DialogTrigger> Open </DialogTrigger>

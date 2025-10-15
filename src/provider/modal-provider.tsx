@@ -1,4 +1,5 @@
 import { ButtonModal } from "@/components/modal/button-modal"
+import { DialogModal } from "@/components/modal/dialog-modal"
 import { InputModal } from "@/components/modal/input-modal"
 import { useEffect, useState } from "react"
 
@@ -17,6 +18,7 @@ export const ModalProvider=()=>{
         <>
         <ButtonModal/>
         <InputModal/>
+        <DialogModal/>
         </>
     )
 }

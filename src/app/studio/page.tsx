@@ -2,14 +2,13 @@
 
 
 import { ThemeToggle } from "@/components/theme-toggle";
-
-import {Button} from 'must-ui-v2'
-
+import {Input,Button} from 'must-ui'
 import { Code2, Github } from "lucide-react";
 import { SearchInput } from "@/components/search-input";
 import { ModalProvider } from "@/provider/modal-provider";
 import { useModal } from "@/hooks/use-modal-store";
-import { Input } from "@/library/components/input";
+import { Dialog, DialogCancel, DialogContent, DialogDescription, DialogFooter, DialogSubmit, DialogTitle, DialogTrigger } from "@/library/components/dialog";
+
 
 
 const StudioPage = () => {
@@ -43,13 +42,27 @@ const StudioPage = () => {
           <div className=" relative border border-zinc-600 rounded-md w-full h-[200px] dark:hover:bg-zinc-900  hover:bg-zinc-100/90 transition-all flex items-center justify-center " >
           <div onClick={()=>onOpen('inputModal')}  className="absolute top-0 right-0 m-2 bg-zinc-700 dark:bg-white dark:text-zinc-800 text-white px-2  rounded-md cursor-pointer"><Code2 className="w-5 h-5" /></div>
           <Input 
-          
           variant="filled"
           size="lg"
           />
           </div>
-          <div className="border border-zinc-600 rounded-md w-full h-[200px] dark:hover:bg-zinc-900  hover:bg-zinc-100/90 transition-all flex items-center justify-center " >
-         3.kutu
+          <div className=" relative border border-zinc-600 rounded-md w-full h-[200px] dark:hover:bg-zinc-900  hover:bg-zinc-100/90 transition-all flex items-center justify-center " >
+          <div onClick={()=>onOpen('dialogModal')}  className="absolute top-0 right-0 m-2 bg-zinc-700 dark:bg-white dark:text-zinc-800 text-white px-2  rounded-md cursor-pointer"><Code2 className="w-5 h-5" /></div>
+          <Dialog>
+          <DialogTrigger>
+          Open
+          </DialogTrigger>
+          <DialogContent >
+          <DialogTitle>Are you sure?</DialogTitle>
+         <DialogDescription>
+           Take a moment to review the details provided to ensure you understand the implications.
+         </DialogDescription>
+         <DialogFooter>
+          <DialogCancel>Cancel</DialogCancel>
+          <DialogSubmit>Submit</DialogSubmit>
+         </DialogFooter>
+          </DialogContent>
+          </Dialog>
           </div>
         <div className="border border-zinc-600 rounded-md w-full h-[200px] dark:hover:bg-zinc-900  hover:bg-zinc-100/90 transition-all flex items-center justify-center " >
         4.kutu

@@ -5,14 +5,25 @@ import { CheckCheck, Copy } from "lucide-react"
 import { useState } from "react"
 
 
-export const ButtonModal=()=>{
+export const DialogModal=()=>{
   const[copied,setCopied]=useState(false)
 
-  const code=`  import { Button } from "must-ui";
+  const code=`  import { Dialog } from "must-ui";
 
-  <Button
-  variant={primary}
-  size={md}>Button</Button>`
+  <Dialog>
+  <DialogTrigger> Open </DialogTrigger>
+  <DialogContent >
+  <DialogTitle>Are you sure?</DialogTitle>
+  <DialogDescription>
+  Take a moment to review the details provided to ensure you understand the implications.
+  </DialogDescription>
+  <DialogFooter>
+  <DialogCancel> Cancel </DialogCancel>
+  <DialogSubmit> Submit </DialogSubmit>
+  </DialogFooter>
+  </DialogContent>
+  </Dialog>`
+
   const onCopy=()=>{
     navigator.clipboard.writeText(code)
     setCopied(true)
@@ -22,7 +33,7 @@ export const ButtonModal=()=>{
   }
   
     const {isOpen,type,onClose}=useModal()
-    const isModalOpen=isOpen && type=== 'buttonModal'
+    const isModalOpen=isOpen && type=== 'dialogModal'
 
     if (!isModalOpen) return null;
     return(

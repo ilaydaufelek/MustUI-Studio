@@ -3,11 +3,12 @@
 
 import { ThemeToggle } from "@/components/theme-toggle";
 import {Input,Button} from 'must-ui'
-import { Code2, Github } from "lucide-react";
+import { ChevronDown, Code2, Github } from "lucide-react";
 import { SearchInput } from "@/components/search-input";
 import { ModalProvider } from "@/provider/modal-provider";
 import { useModal } from "@/hooks/use-modal-store";
 import { Dialog, DialogCancel, DialogContent, DialogDescription, DialogFooter, DialogSubmit, DialogTitle, DialogTrigger } from "must-ui";
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/library/components/dropdown";
 
 
 
@@ -32,25 +33,25 @@ const StudioPage = () => {
       <div className="min-h-screen flex  justify-center  mt-4 md:mt-8 ">
         <div className="h-full max-w-[1400px] w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 p-6 ">
           
-        <div className="relative border  border-zinc-600 rounded-md w-full h-[200px] dark:hover:bg-zinc-900  hover:bg-zinc-100/90 transition-all flex items-center justify-center " >
+        <div className="relative border  border-zinc-600 rounded-md w-full h-[200px]  transition-all flex items-center justify-center " >
           <div onClick={()=>onOpen('buttonModal')}  className="absolute top-0 right-0 m-2 bg-zinc-700 dark:bg-white dark:text-zinc-800 text-white px-2  rounded-md cursor-pointer"><Code2 className="w-5 h-5" /></div>
             <Button 
             size="md"
             variant="primary">button</Button>
           </div>
 
-          <div className=" relative border border-zinc-600 rounded-md w-full h-[200px] dark:hover:bg-zinc-900  hover:bg-zinc-100/90 transition-all flex items-center justify-center " >
+          <div className=" relative border border-zinc-600 rounded-md w-full h-[200px]  transition-all flex items-center justify-center " >
           <div onClick={()=>onOpen('inputModal')}  className="absolute top-0 right-0 m-2 bg-zinc-700 dark:bg-white dark:text-zinc-800 text-white px-2  rounded-md cursor-pointer"><Code2 className="w-5 h-5" /></div>
           <Input 
           variant="filled"
           size="lg"
           />
           </div>
-          <div className=" relative border border-zinc-600 rounded-md w-full h-[200px] dark:hover:bg-zinc-900  hover:bg-zinc-100/90 transition-all flex items-center justify-center " >
+          <div className=" relative border border-zinc-600 rounded-md w-full h-[200px]  transition-all flex items-center justify-center " >
           <div onClick={()=>onOpen('dialogModal')}  className="absolute top-0 right-0 m-2 bg-zinc-700 dark:bg-white dark:text-zinc-800 text-white px-2  rounded-md cursor-pointer"><Code2 className="w-5 h-5" /></div>
           <Dialog>
           <DialogTrigger>
-          Open
+          Open Dialog
           </DialogTrigger>
           <DialogContent >
           <DialogTitle>Are you sure?</DialogTitle>
@@ -64,12 +65,22 @@ const StudioPage = () => {
           </DialogContent>
           </Dialog>
           </div>
-        <div className="border border-zinc-600 rounded-md w-full h-[200px] dark:hover:bg-zinc-900  hover:bg-zinc-100/90 transition-all flex items-center justify-center " >
-        4.kutu
+        <div className="border border-zinc-600 rounded-md w-full h-[200px] transition-all flex items-center justify-center " >
+       <DropdownMenu >
+        <DropdownMenuTrigger className="font-semibold text-sm ">
+        DropdownMenu
+        <ChevronDown className="w-4 h-4 ml-2 " />
+        </DropdownMenuTrigger>
+        <DropdownMenuContent >
+         <DropdownMenuItem  >Option 1</DropdownMenuItem>
+         <DropdownMenuItem  >Option 2</DropdownMenuItem>
+         <DropdownMenuItem  >Option 3</DropdownMenuItem>
+        </DropdownMenuContent>
+       </DropdownMenu>
         </div>
-          <div className="border border-zinc-600 rounded-md w-full h-[200px] dark:hover:bg-zinc-900  hover:bg-zinc-100/90 transition-all flex items-center justify-center " >5kutu</div>
-          <div className="border border-zinc-600 rounded-md w-full h-[200px] dark:hover:bg-zinc-900  hover:bg-zinc-100/90 transition-all flex items-center justify-center " >6kutu</div>
-          <div className="border border-zinc-600 rounded-md w-full h-[200px] dark:hover:bg-zinc-900  hover:bg-zinc-100/90 transition-all flex items-center justify-center " > 7 kutu</div>
+          <div className="border border-zinc-600 rounded-md w-full h-[200px] transition-all flex items-center justify-center " >5kutu</div>
+          <div className="border border-zinc-600 rounded-md w-full h-[200px] transition-all flex items-center justify-center " >6kutu</div>
+          <div className="border border-zinc-600 rounded-md w-full h-[200px] transition-all flex items-center justify-center " > 7 kutu</div>
           
       </div>
       </div>

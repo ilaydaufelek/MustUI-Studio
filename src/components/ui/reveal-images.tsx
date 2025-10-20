@@ -56,15 +56,15 @@ function RevealImageList() {
       text: "..more",
       images: [
         {
-          src: "/alert.png",
+          src: "",
           alt: "Image 1",
         },
         {
-          src: "/dialog.png",
+          src: "",
           alt: "Image 2",
         },
         {
-          src: "/dropdown.png",
+          src: "",
           alt: "Image 3",
         },
       ],
@@ -72,7 +72,7 @@ function RevealImageList() {
   ];
 
   return (
-    <div className="flex flex-col sm:flex-row flex-wrap items-start gap-8 rounded-sm bg-background px-4 py-4">
+    <div suppressHydrationWarning  className="flex flex-col sm:flex-row flex-wrap items-start gap-8 rounded-sm bg-background px-4 py-4">
       {items.map((item, index) => (
         <RevealImageListItem key={index} text={item.text} images={item.images} />
       ))}

@@ -65,11 +65,12 @@ const StudioPage = () => {
           </DialogContent>
           </Dialog>
           </div>
-        <div className="border border-zinc-600 rounded-md w-full h-[200px] transition-all flex items-center justify-center " >
+        <div className=" relative border border-zinc-600 rounded-md w-full h-[200px] transition-all flex items-center justify-center  " >
+        <div onClick={()=>onOpen('dropdownMenuModal')}  className="absolute top-0 right-0 m-2 bg-zinc-700 dark:bg-white dark:text-zinc-800 text-white px-2  rounded-md cursor-pointer"><Code2 className="w-5 h-5" /></div>
        <DropdownMenu >
-        <DropdownMenuTrigger className="font-semibold text-sm ">
-        DropdownMenu
-        <ChevronDown className="w-4 h-4 ml-2 " />
+        <DropdownMenuTrigger className="font-semibold text-sm break-words  ">
+         DropdownMenu
+        <ChevronDown className="w-4 h-4 ml-2  " />
         </DropdownMenuTrigger>
         <DropdownMenuContent >
          <DropdownMenuItem  >Option 1</DropdownMenuItem>

@@ -1,81 +1,41 @@
-'use client'
-import { ShaderAnimation } from "@/components/ui/shader-animation";
-import { TextShimmer } from "@/components/ui/text-shimmer";
-import { motion, AnimatePresence } from "framer-motion";
-import { useEffect, useState } from "react";
+'use client';
+
+import { ThemeToggle } from "@/components/theme-toggle";
+import { RevealImageList } from "@/components/ui/reveal-images";
+import { Github } from "lucide-react";
+import { Button } from "must-ui";
 import { useRouter } from "next/navigation";
-const MainPage = () => {
- const [isShow, setIsShow] = useState(true);
-  const [showGetStarted, setShowGetStarted] = useState(false);
 
-   const router=useRouter()
-  useEffect(() => {
-    const timer = setTimeout(() => setIsShow(false), 5000); 
-    return () => clearTimeout(timer);
-  }, []);
 
-   const handleClick=()=>{
-    router.push('/studio')
-   }
-  useEffect(() => {
-    if (!isShow) {
-      const timer = setTimeout(() => setShowGetStarted(true), 1500); 
-      return () => clearTimeout(timer);
-    }
-  }, [isShow]);
-
+export default function HomePage() {
+  const router=useRouter()
   return (
-    <div className="relative flex h-screen  flex-col items-center justify-center overflow-hidden">
-      <ShaderAnimation/>
-      <div className="absolute z-10   leading-none font-semibold tracking-tighter whitespace-pre-wrap text-white">
-      <AnimatePresence>
-        {isShow && (
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -50 }}
-            transition={{ duration: 1.5, ease: "easeInOut" }}
-          >
-            <TextShimmer
-              duration={1.2}
-              className="  text-4xl font-semibold [--base-color:theme(colors.white)] dark:[--base-gradient-color:theme(colors.blue.400)]"
-            >
-              Welcome MustUI Studio
-            </TextShimmer>
-          </motion.div>
-        )}
-      </AnimatePresence>
-     <div className="space-y-6  space-x-4  " >
-      <AnimatePresence>
-        {showGetStarted && (
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1.5, ease: "easeInOut" }}
-            className=" w-full text-center  text-4xl font-semibold"
-           
-          >
-           Start now, make a difference.
-          </motion.div>
-        )}
-      </AnimatePresence>
-     {showGetStarted && (
-         <motion.button
-         onClick={handleClick}
-       initial={{ opacity: 0, y: 50 }}
-       animate={{ opacity: 1, y: 0 }}
-     transition={{ duration: 1.5, ease: "easeInOut" }}
-     className="
-     text-zinc-200 w-24 h-10  ml-auto underline hover:no-underline hover:transition-all flex items-center justify-center cursor-pointer space-x-2 ">
-      Get started
-      </motion.button>
-     )}
-    </div>
-    
+   <div className="w-screen h-screen dark:bg-black bg-white" >
+     <header className="fixed top-0 left-0 w-full  text-black dark:text-white h-[60px] flex items-center  space-x-2 md:px-12 p-2
+        font-bold text-2xl z-50   backdrop-blur-xs  ">
+        <span className="cursor-pointer">MustUI Studio</span>
+        <a   href="https://github.com/ilaydaufelek/MustUI" target="_blank" rel="noopener noreferrer"  className="rounded-full bg-zinc-900  hover:bg-zinc-700 transition-all  w-8 h-8 flex items-center justify-center  ml-auto  cursor-pointer  text-white " >
+         <Github className="w-4 h-4  " /></a>
+        <span className="m-2" ><ThemeToggle/></span>
+      </header>
+     <div className="flex flex-col items-center justify-center text-center min-h-screen bg-background text-foreground  space-y-6 ">
+       <div className="flex flex-row items-center justify-center gap-4 flex-wrap">
+    <h1 className="text-7xl font-black text-foreground">
+      Button Input
+    </h1>
+    <RevealImageList />
+  </div>
+      
+      
+      <p className="text-lg text-muted-foreground max-w-2xl leading-relaxed">
+        This isn’t just another UI library — it’s a design system shaped by precision, performance, and intention.
+    Each component is handcrafted to create consistency across your app while keeping your workflow fast and flexible.
+    Think minimalism meets power.
+      </p>
+      <div >
+        <Button onClick={()=>router.push('/studio')} >Get Started</Button>
       </div>
     </div>
-  )
+   </div>
+  );
 }
-
-
-export default MainPage;

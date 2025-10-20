@@ -1,6 +1,6 @@
 import {create} from 'zustand';
 
-type ModalType='buttonModal' | 'inputModal' | 'dialogModal'
+type ModalType='buttonModal' | 'inputModal' | 'dialogModal' | 'dropdownMenuModal'
 
 interface ModalStore{
     type:ModalType | null;

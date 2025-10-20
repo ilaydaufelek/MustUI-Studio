@@ -56,15 +56,15 @@ function RevealImageList() {
       text: "..more",
       images: [
         {
-          src: "",
+          src: "/alert.png",
           alt: "Image 1",
         },
         {
-          src: "",
+          src: "/dialog.png",
           alt: "Image 2",
         },
         {
-          src: "",
+          src: "/dropdown.png",
           alt: "Image 3",
         },
       ],

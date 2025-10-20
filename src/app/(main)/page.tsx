@@ -8,7 +8,8 @@ import { useRouter } from "next/navigation";
 
 
 export default function HomePage() {
-  const router=useRouter()
+  const router=useRouter();
+  
   return (
    <div className="w-screen h-screen dark:bg-black bg-white" >
      <header className="fixed top-0 left-0 w-full  text-black dark:text-white h-[60px] flex items-center  space-x-2 md:px-12 p-2

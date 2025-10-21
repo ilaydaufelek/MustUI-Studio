@@ -20,7 +20,7 @@ export default function HomePage() {
       </header>
      <div className="flex flex-col items-center justify-center text-center min-h-screen bg-background text-foreground  space-y-6 ">
        <div className="flex flex-row items-center justify-center gap-4 flex-wrap">
-    <h1 className=" text-5xl md:text-7xl font-black text-foreground">
+    <h1 className=" text-5xl md:text-7xl font-black text-foreground transition-all duration-500  ">
       Button Input
     </h1>
     <RevealImageList />

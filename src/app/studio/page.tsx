@@ -9,7 +9,7 @@ import { ModalProvider } from "@/provider/modal-provider";
 import { useModal } from "@/hooks/use-modal-store";
 import { Dialog, DialogCancel, DialogContent, DialogDescription, DialogFooter, DialogSubmit, DialogTitle, DialogTrigger } from "must-ui";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/library/components/dropdown";
-import { useRouter } from "next/navigation";
+
 
 
 
@@ -18,14 +18,8 @@ const StudioPage = () => {
   const{onOpen}= useModal()
 
   return (
-    <div className=" relative min-h-screen bg-white dark:bg-black overflow-hidden">
-       <div className=" absolute top-0 z-0 h-full w-full ">
-       <div className="absolute top-0 z-0 h-screen w-screen 
-  bg-white 
-  bg-[radial-gradient(100%_50%_at_50%_0%,rgba(0,0,0)_0,rgba(0,0,0,0)_50%,rgba(0,0,0,0)_100%)] dark:bg-[radial-gradient(100%_50%_at_50%_0%,rgba(255,255,255)_0,rgba(255,255,255,0)_50%,rgba(255,255,255,0)_100%)]
-  dark:bg-black
-"></div>
-      </div>
+    <div className=" relative min-h-screen  overflow-hidden">
+  <div className="absolute inset-0 z-0 h-full w-full bg-white bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px] dark:bg-black dark:bg-[radial-gradient(#19191c_1px,transparent_1px)]  "></div>
     
      <div className="relative z-10" >
        <header className="   w-full  text-black dark:text-white h-[60px] flex items-center  space-x-2 md:px-12 p-2

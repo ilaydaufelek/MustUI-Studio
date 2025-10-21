@@ -1,5 +1,4 @@
 'use client';
-
 import { ThemeToggle } from "@/components/theme-toggle";
 import { RevealImageList } from "@/components/ui/reveal-images";
 import { Github } from "lucide-react";
@@ -21,14 +20,14 @@ export default function HomePage() {
       </header>
      <div className="flex flex-col items-center justify-center text-center min-h-screen bg-background text-foreground  space-y-6 ">
        <div className="flex flex-row items-center justify-center gap-4 flex-wrap">
-    <h1 className="text-7xl font-black text-foreground">
+    <h1 className=" text-5xl md:text-7xl font-black text-foreground">
       Button Input
     </h1>
     <RevealImageList />
   </div>
       
       
-      <p className="text-lg text-muted-foreground max-w-2xl leading-relaxed">
+      <p className=" text-md md:text-lg text-muted-foreground max-w-2xl px-2 md:px-0 leading-relaxed">
         This isn’t just another UI library — it’s a design system shaped by precision, performance, and intention.
     Each component is handcrafted to create consistency across your app while keeping your workflow fast and flexible.
     Think minimalism meets power.

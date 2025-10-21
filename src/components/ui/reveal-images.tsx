@@ -19,16 +19,16 @@ function RevealImageListItem({ text, images }: ShowImageListItemProps) {
   useEffect(() => {
     const interval = setInterval(() => {
       setVisibleIndex(prev => (prev === images.length - 1 ? 0 : prev + 1));
-    }, 3000); 
+    }, 4000); 
 
     return () => clearInterval(interval);
   }, [images.length]);
 
-  const container = "absolute  right-0 -top-2 z-40 h-20  w-16 rounded-md bg-[#EEEEEF] dark:shadow-white shadow-2xl shadow-black  ";
+  const container = "absolute  right-0 -top-2 z-40  h-16 w-12  md:h-20  md:w-16 rounded-md bg-[#EEEEEF] dark:shadow-white shadow-2xl shadow-black  ";
 
   return (
     <div className="relative h-fit w-fit overflow-visible py-8  ">
-      <h1 className="text-7xl font-black text-foreground transition-all duration-500  ">
+      <h1 className=" text-5xl md:text-7xl font-black text-foreground transition-all duration-500  ">
         {text}
       </h1>
       {images.map((img, index) => (

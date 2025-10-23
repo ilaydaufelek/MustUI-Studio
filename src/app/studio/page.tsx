@@ -18,8 +18,8 @@ const StudioPage = () => {
   const{onOpen}= useModal()
 
   return (
-    <div className=" relative min-h-screen  overflow-hidden">
-  <div className="absolute inset-0 z-0 h-full w-full bg-white bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px] dark:bg-black dark:bg-[radial-gradient(#19191c_1px,transparent_1px)]  "></div>
+    <div className=" relative min-h-screen ">
+  <div className="absolute inset-0 z-0 h-full w-full bg-white bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px] dark:bg-black dark:bg-[radial-gradient(#19191c1px,transparent_1px)]  "></div>
     
      <div className="relative z-10" >
        <header className="   w-full  text-black dark:text-white h-[60px] flex items-center  space-x-2 md:px-12 p-2
@@ -40,25 +40,25 @@ const StudioPage = () => {
   } > Got to GitHub</Button>
        </div>
      
-             <div className="  min-h-screen flex  justify-center  mt-4 md:mt-8 ">
+      <div className="  min-h-screen flex  justify-center  mt-4 md:mt-8 ">
         
         <div className="h-full max-w-[1400px] w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 p-6  ">
           
-        <div className="relative border border-zinc-300 dark:border-zinc-800 rounded-md w-full h-[200px]  transition-all flex items-center justify-center  hover:scale-[1.03] " >
+        <div className="relative border border-zinc-300 dark:border-zinc-800 rounded-md w-full h-[200px]  transition-all flex items-center justify-center   " >
           <div onClick={()=>onOpen('buttonModal')}  className="absolute top-0 right-0 m-2 bg-zinc-700 dark:bg-white dark:text-zinc-800 text-white px-2  rounded-md cursor-pointer"><Code2 className="w-5 h-5" /></div>
             <Button 
             size="md"
             variant="primary">button</Button>
           </div>
 
-          <div className=" relative border border-zinc-300 dark:border-zinc-800 rounded-md w-full h-[200px]  transition-all flex items-center justify-center duration-300 hover:scale-[1.03] " >
+          <div className=" relative border border-zinc-300 dark:border-zinc-800 rounded-md w-full h-[200px]  transition-all flex items-center justify-center  " >
           <div onClick={()=>onOpen('inputModal')}  className="absolute top-0 right-0 m-2 bg-zinc-700 dark:bg-white dark:text-zinc-800 text-white px-2  rounded-md cursor-pointer"><Code2 className="w-5 h-5" /></div>
           <Input 
           variant="filled"
           size="lg"
           />
           </div>
-          <div className=" relative border border-zinc-300 dark:border-zinc-800 rounded-md w-full h-[200px]  transition-all flex items-center justify-center duration-300 hover:scale-[1.03] " >
+          <div className=" relative border border-zinc-300 dark:border-zinc-800 rounded-md w-full h-[200px]  transition-all flex items-center justify-center  " >
           <div onClick={()=>onOpen('dialogModal')}  className="absolute top-0 right-0 m-2 bg-zinc-700 dark:bg-white dark:text-zinc-800 text-white px-2  rounded-md cursor-pointer"><Code2 className="w-5 h-5" /></div>
           <Dialog>
           <DialogTrigger>
@@ -76,7 +76,7 @@ const StudioPage = () => {
           </DialogContent>
           </Dialog>
           </div>
-        <div className=" relative border border-zinc-300 dark:border-zinc-800 rounded-md  w-full h-[200px] transition-all flex items-center justify-center duration-300 hover:scale-[1.03]  " >
+        <div className=" relative border border-zinc-300 dark:border-zinc-800 rounded-md  w-full h-[200px] transition-all flex items-center justify-center" >
         <div onClick={()=>onOpen('dropdownMenuModal')}  className="absolute top-0 right-0 m-2 bg-zinc-700 dark:bg-white dark:text-zinc-800 text-white px-2  rounded-md cursor-pointer"><Code2 className="w-5 h-5" /></div>
        <DropdownMenu >
         <DropdownMenuTrigger className="font-semibold text-sm break-words  ">
@@ -90,9 +90,9 @@ const StudioPage = () => {
         </DropdownMenuContent>
        </DropdownMenu>
         </div>
-          <div className="relative border border-zinc-300 dark:border-zinc-800 rounded-md  w-full h-[200px] transition-all flex items-center justify-center  duration-300 hover:scale-[1.03]" >5kutu</div>
-          <div className="relative border border-zinc-300 dark:border-zinc-800 rounded-md  w-full h-[200px] transition-all flex items-center justify-center duration-300 hover:scale-[1.03] " >6kutu</div>
-          <div className="relative border border-zinc-300 dark:border-zinc-800 rounded-md  w-full h-[200px] transition-all flex items-center justify-center duration-300 hover:scale-[1.03] " > 7 kutu</div>
+          <div className="relative border border-zinc-300 dark:border-zinc-800 rounded-md  w-full h-[200px] transition-all flex items-center justify-center " >5kutu</div>
+          <div className="relative border border-zinc-300 dark:border-zinc-800 rounded-md  w-full h-[200px] transition-all flex items-center justify-center " >6kutu</div>
+          <div className="relative border border-zinc-300 dark:border-zinc-800 rounded-md  w-full h-[200px] transition-all flex items-center justify-center  " > 7 kutu</div>
           
       </div>
       </div>

@@ -50,13 +50,12 @@ const StudioPage = () => {
       <p onClick={()=>router.push('/studio/accordion')} className="text-sm font-semibold hover:underline cursor-pointer " >Accordion</p>
        </div>
        
-        <div   className="relative border border-zinc-300 dark:border-zinc-800 rounded-md w-full h-[200px]  transition-all flex items-center justify-center " >
-          <div   className="absolute top-0 right-0 m-2 bg-zinc-700 dark:bg-white dark:text-zinc-800 text-white px-2  rounded-md cursor-pointer"><Code2 className="w-5 h-5" /></div>
-            <Button
-       onClick={()=>{router.push('/studio/button')}} 
-            size="md"
-            variant="primary">button</Button>
-          </div>
+       <div className=" text-center space-y-3" >
+       <div onClick={()=>router.push('/studio/button')} className="border border-zinc-300 dark:border-zinc-800 rounded-md  w-full h-[200px] flex items-center justify-center cursor-pointer  transition-all" >
+        <img className="" src="button.png" alt="" />
+       </div>
+      <p onClick={()=>router.push('/studio/button')} className="text-sm font-semibold hover:underline cursor-pointer " >Button</p>
+       </div>
 
           <div className=" relative border border-zinc-300 dark:border-zinc-800 rounded-md w-full h-[200px]  transition-all flex items-center justify-center  " >
           <div className="absolute top-0 right-0 m-2 bg-zinc-700 dark:bg-white dark:text-zinc-800 text-white px-2  rounded-md cursor-pointer"><Code2 className="w-5 h-5" /></div>

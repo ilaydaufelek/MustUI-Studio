@@ -1,7 +1,7 @@
 'use client'
 import { ThemeToggle } from "@/components/theme-toggle"
 import { ModalProvider } from "@/provider/modal-provider"
-import { Code2, Github, PlusIcon } from "lucide-react"
+import { Code,  Github, LoaderCircleIcon, PlusIcon } from "lucide-react"
 import { Button } from "@/library/components/button"
 import { useModal } from "@/hooks/use-modal-store"
 
@@ -20,7 +20,7 @@ import { useModal } from "@/hooks/use-modal-store"
       </header>
       <div className="  w-full  flex flex-col items-center justify-center mt-12 space-y-6  " >
         <div className="  text-5xl md:text-7xl  font-bold text-center   " >
-        Buttons
+        Button
         </div>
         <p className=" text-center text-lg text-zinc-400 dark:text-zinc-300 text-md md:text-lg  max-w-3xl  leading-relaxed font-semibold  " >
        A collection of unique accordion components built with React and Tailwind CSS, designed for modern projects.
@@ -35,18 +35,33 @@ import { useModal } from "@/hooks/use-modal-store"
      
 
       <div className=" relative group border border-zinc-300 dark:border-zinc-800 rounded-md w-full h-[100px]  transition-all flex items-center justify-center ">
-      <div onClick={()=>onOpen('buttonModal',"default")}  className="absolute top-0 right-0 m-2  opacity-0 group-hover:opacity-100 transition-opacity  bg-zinc-700 dark:bg-white dark:text-zinc-800 text-white px-2  rounded-md cursor-pointer"><Code2 className="w-5 h-5" /></div>
-      <Button variant="primary" size="md" >Button</Button>
+      <div onClick={()=>onOpen('buttonModal',"default")}  className="absolute top-0 right-0 m-2  opacity-0 group-hover:opacity-100 transition-opacity  text-zinc-800 dark:text-white px-2  rounded-md cursor-pointer"><Code className="w-4 h-4" /></div>
+      <Button  size="md" >Button</Button>
       </div>
       <div className=" relative border group border-zinc-300 dark:border-zinc-800 rounded-md w-full h-[100px]  transition-all flex items-center justify-center  " >
-      <div onClick={()=>onOpen('buttonModal',"icons")}  className="absolute top-0 right-0 m-2  opacity-0 group-hover:opacity-100 transition-opacity  bg-zinc-700 dark:bg-white dark:text-zinc-800 text-white px-2  rounded-md cursor-pointer"><Code2 className="w-5 h-5" /></div>
+      <div onClick={()=>onOpen('buttonModal',"icons")}  className="absolute top-0 right-0 m-2  opacity-0 group-hover:opacity-100 transition-opacity   text-zinc-800 dark:text-white px-2  rounded-md cursor-pointer"><Code className="w-4 h-4" /></div>
       <Button size="icon" variant="outline" >
       <PlusIcon size={16} />
       </Button>
       </div>
-        <div className=" relative border border-zinc-300 dark:border-zinc-800 rounded-md  w-full h-[100px] transition-all flex items-center justify-center" >
-       
-        </div>
+      <div className=" relative group border border-zinc-300 dark:border-zinc-800 rounded-md  w-full h-[100px] transition-all flex items-center justify-center" >
+      <div onClick={()=>onOpen('buttonModal',"disabled")}  className="absolute top-0 right-0 m-2  opacity-0 group-hover:opacity-100 transition-opacity   text-zinc-800 dark:text-white px-2  rounded-md cursor-pointer"><Code className="w-4 h-4" /></div>
+      <Button disabled >
+       Button
+      </Button>
+      </div>
+      <div className=" relative group border border-zinc-300 dark:border-zinc-800 rounded-md  w-full h-[100px] transition-all flex items-center justify-center" >
+      <div onClick={()=>onOpen('buttonModal',"disabled")}  className="absolute top-0 right-0 m-2  opacity-0 group-hover:opacity-100 transition-opacity   text-zinc-800 dark:text-white px-2  rounded-md cursor-pointer"><Code className="w-4 h-4" /></div>
+      <Button variant="outline" disabled>
+      <LoaderCircleIcon
+        className="-ms-1 mr-1  animate-spin"
+        size={16}
+        aria-hidden="true"
+      />
+      Button
+    </Button>
+      </div>
+      
        
        
          

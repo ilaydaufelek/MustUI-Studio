@@ -45,57 +45,42 @@ const StudioPage = () => {
       <div className="h-full max-w-[1400px] w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 p-6  ">
       <div className=" text-center space-y-3" >
        <div onClick={()=>router.push('/studio/accordion')} className="border border-zinc-300 dark:border-zinc-800 rounded-md  w-full h-[200px] flex items-center justify-center cursor-pointer  transition-all" >
-        <img className="" src="accordion.png" alt="" />
+        <img className="w-[150px]" src="accordion.png" alt="" />
        </div>
       <p onClick={()=>router.push('/studio/accordion')} className="text-sm font-semibold hover:underline cursor-pointer " >Accordion</p>
        </div>
        
        <div className=" text-center space-y-3" >
        <div onClick={()=>router.push('/studio/button')} className="border border-zinc-300 dark:border-zinc-800 rounded-md  w-full h-[200px] flex items-center justify-center cursor-pointer  transition-all" >
-        <img className="" src="button.png" alt="" />
+        <img className="w-[100px]  " src="button.png" alt="" />
        </div>
       <p onClick={()=>router.push('/studio/button')} className="text-sm font-semibold hover:underline cursor-pointer " >Button</p>
        </div>
 
-          <div className=" relative border border-zinc-300 dark:border-zinc-800 rounded-md w-full h-[200px]  transition-all flex items-center justify-center  " >
-          <div className="absolute top-0 right-0 m-2 bg-zinc-700 dark:bg-white dark:text-zinc-800 text-white px-2  rounded-md cursor-pointer"><Code2 className="w-5 h-5" /></div>
-          <Input 
-          variant="filled"
-          size="lg"
-          />
-          </div>
-          <div className=" relative border border-zinc-300 dark:border-zinc-800 rounded-md w-full h-[200px]  transition-all flex items-center justify-center  " >
-          <div   className="absolute top-0 right-0 m-2 bg-zinc-700 dark:bg-white dark:text-zinc-800 text-white px-2  rounded-md cursor-pointer"><Code2 className="w-5 h-5" /></div>
-          <Dialog>
-          <DialogTrigger>
-          Open Dialog
-          </DialogTrigger>
-          <DialogContent >
-          <DialogTitle>Are you sure?</DialogTitle>
-         <DialogDescription>
-           Take a moment to review the details provided to ensure you understand the implications.
-         </DialogDescription>
-         <DialogFooter>
-          <DialogCancel>Cancel</DialogCancel>
-          <DialogSubmit>Submit</DialogSubmit>
-         </DialogFooter>
-          </DialogContent>
-          </Dialog>
-          </div>
-        <div className=" relative border border-zinc-300 dark:border-zinc-800 rounded-md  w-full h-[200px] transition-all flex items-center justify-center" >
-        <div   className="absolute top-0 right-0 m-2 bg-zinc-700 dark:bg-white dark:text-zinc-800 text-white px-2  rounded-md cursor-pointer"><Code2 className="w-5 h-5" /></div>
-       <DropdownMenu >
-        <DropdownMenuTrigger className="font-semibold text-sm break-words  ">
-         DropdownMenu
-        <ChevronDown className="w-4 h-4 ml-2  " />
-        </DropdownMenuTrigger>
-        <DropdownMenuContent >
-         <DropdownMenuItem  >Option 1</DropdownMenuItem>
-         <DropdownMenuItem  >Option 2</DropdownMenuItem>
-         <DropdownMenuItem  >Option 3</DropdownMenuItem>
-        </DropdownMenuContent>
-       </DropdownMenu>
-        </div>
+         <div className=" text-center space-y-3" >
+       <div onClick={()=>router.push('/studio/dialog')} className="border border-zinc-300 dark:border-zinc-800 rounded-md  w-full h-[200px] flex items-center justify-center cursor-pointer  transition-all" >
+      <img className="w-[150px]  " src="dialog.png" alt="" />
+       </div>
+      <p onClick={()=>router.push('/studio/dialog')} className="text-sm font-semibold hover:underline cursor-pointer " >Dialog</p>
+       </div>
+
+        <div className=" text-center space-y-3" >
+       <div onClick={()=>router.push('/studio/dropdown')} className="border border-zinc-300 dark:border-zinc-800 rounded-md  w-full h-[200px] flex items-center justify-center cursor-pointer  transition-all" >
+        <img className="w-[150px]  " src="dropdown.png" alt="" />
+       </div>
+      <p onClick={()=>router.push('/studio/dropdown')} className="text-sm font-semibold hover:underline cursor-pointer " >Dropdown</p>
+       </div>
+
+
+
+       <div className=" text-center space-y-3" >
+       <div onClick={()=>router.push('/studio/input')} className="border border-zinc-300 dark:border-zinc-800 rounded-md  w-full h-[200px] flex items-center justify-center cursor-pointer  transition-all" >
+        <img className="w-[150px] h-[27px] " src="input.png" alt="" />
+       </div>
+      <p onClick={()=>router.push('/studio/input')} className="text-sm font-semibold hover:underline cursor-pointer " >Input</p>
+       </div>
+      
+    
         <div className="relative border border-zinc-300 dark:border-zinc-800 rounded-md  w-full h-[200px] transition-all flex items-center justify-center " >
          <Accordion/> </div>
           <div className="relative border border-zinc-300 dark:border-zinc-800 rounded-md  w-full h-[200px] transition-all flex items-center justify-center " >6kutu</div>

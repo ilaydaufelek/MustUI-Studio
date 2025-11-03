@@ -1,14 +1,48 @@
 'use client'
 import { ThemeToggle } from "@/components/theme-toggle"
+import { Accordion, AccordionContent, AccordionItem,  AccordionTrigger } from "@/library/components/accordion"
 import { ModalProvider } from "@/provider/modal-provider"
-import { Github } from "lucide-react"
+import { Accessibility,  Code2,  Gauge, Github, HandHelping, Palette, } from "lucide-react"
 import { Button } from "must-ui"
+
+
+const items = [
+  {
+    id: "1",
+    icon: Code2,
+    title: "Developer-first design",
+    content:
+      "MustUI is built to ship fast. Composable architecture, predictable component APIs, and examples that actually make sense.",
+  },
+  {
+    id: "2",
+    icon: Palette,
+    title: "Modern styling freedom",
+    content:
+      "Tailwind? Yes. Custom CSS? Yes. Theme tokens and dark mode? Already included. No lock-in, no drama.",
+  },
+  {
+    id: "3",
+    icon: Gauge,
+    title: "Optimized for real performance",
+    content:
+      "Minimal runtime footprint. No heavy dependencies. We squeeze out every millisecond — because users deserve speed.",
+  },
+  {
+    id: "4",
+    icon: HandHelping,
+    title: "Production-ready accessibility",
+    content:
+      "Accessible by default. Tested with screen readers and strict contrast rules. Inclusivity is not optional here.",
+  },
+]
+
+
 
 const AccordionPage=()=>{
     return(
-        <div className=" relative min-h-screen ">
-   <div className="absolute inset-0 z-0 h-full w-full bg-white bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px] dark:bg-black dark:bg-[radial-gradient(#19191c_1px,transparent_1px)]  "></div>
-   <div className="relative z-10" >
+        <div className=" min-h-screen ">
+  
        <header className="   w-full  text-black dark:text-white h-[60px] flex items-center  space-x-2 md:px-12 p-2
           ">
         <a   href="https://github.com/ilaydaufelek/MustUI" target="_blank" rel="noopener noreferrer"  className="rounded-full bg-zinc-900  hover:bg-zinc-700 transition-all  w-8 h-8 flex items-center justify-center  ml-auto  cursor-pointer  text-white " >
@@ -28,16 +62,42 @@ const AccordionPage=()=>{
        </div>
      
       <div className="  min-h-screen flex  justify-center  mt-4 md:mt-8 ">
-      <div className="h-full max-w-[1400px] w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 p-6  ">
+      <div className="h-full max-w-[1400px] w-full grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 gap-4 p-6  ">
      
 
-          <div className=" relative border border-zinc-300 dark:border-zinc-800 rounded-md w-full h-[200px]  transition-all flex items-center justify-center  " >
-          
-          </div>
-          <div className=" relative border border-zinc-300 dark:border-zinc-800 rounded-md w-full h-[200px]  transition-all flex items-center justify-center  " >
-         
-          </div>
-        <div className=" relative border border-zinc-300 dark:border-zinc-800 rounded-md  w-full h-[200px] transition-all flex items-center justify-center" >
+         <div className="relative border border-zinc-300 dark:border-zinc-800 rounded-md w-full transition-all">
+  <Accordion className="w-full">
+    {items.map((item) => (
+    <AccordionItem value={item.id} key={item.id} className="">
+    <AccordionTrigger>
+    {item.title}
+    </AccordionTrigger>
+    <AccordionContent>
+    {item.content}
+    </AccordionContent>
+    </AccordionItem>
+    ))}
+  </Accordion>
+</div>
+
+<div className="relative border border-zinc-300 dark:border-zinc-800 rounded-md w-full transition-transform duration-1000 ">
+  <Accordion className="w-full">
+    {items.map((itemm) => (
+    <AccordionItem value={itemm.id} key={itemm.id} className="">
+    <AccordionTrigger>
+    <span className="flex items-center gap-3">
+    <itemm.icon size={16} className="shrink-0 opacity-60" aria-hidden="true" />
+    <span>{itemm.title}</span>
+    </span>
+    </AccordionTrigger>
+    <AccordionContent>
+    {itemm.content}
+    </AccordionContent>
+    </AccordionItem>
+    ))}
+  </Accordion>
+  </div>
+  <div className=" relative border border-zinc-300 dark:border-zinc-800 rounded-md  w-full h-[200px] transition-all flex items-center justify-center" >
        
         </div>
        
@@ -47,7 +107,7 @@ const AccordionPage=()=>{
       
       </div>
      </div>
-   </div>
+  
       <ModalProvider/>
    
     </div>

@@ -1,5 +1,6 @@
 'use client'
 
+import { cn } from "@/lib/utils";
 import React, { useState , createContext, useContext} from "react"
 
 interface DialogContextType{
@@ -9,8 +10,9 @@ interface DialogContextType{
 interface DialogProps{
     children:React.ReactNode
 }
-interface DialogTriggerProps{
+interface DialogTriggerProps extends React.HTMLAttributes<HTMLButtonElement> {
     children:React.ReactNode
+    className?:string
 }
 
 interface DialogContentProps{
@@ -49,10 +51,10 @@ const DialogContext= createContext<DialogContextType |null>(null)
 
  }
 
- export const DialogTrigger=({children}:DialogTriggerProps)=>{
+ export const DialogTrigger=({children,className,...props}:DialogTriggerProps)=>{
   const ctx=useContext(DialogContext);
   if(!ctx) throw new Error("DialogTrigger must be used within Dialog")
-    return <div className=" border dark:border-zinc-200/30 border-zinc-700/20  cursor-pointer rounded-md px-2 py-1 font-medium"  onClick={()=>ctx.setOpen(true)} >{children}</div>
+    return <button className={cn(" border dark:border-zinc-200/30 border-zinc-700/20  cursor-pointer rounded-md px-2 py-1 font-medium",className )} {...props} onClick={()=>ctx.setOpen(true)} >{children}</button>
  }
 
  export const DialogContent=({children,}:DialogContentProps)=>{

@@ -9,9 +9,9 @@ import { useModal } from "@/hooks/use-modal-store"
  const ButtonPage=()=>{
     const {onOpen} =useModal()
     return(
-            <div className=" relative min-h-screen ">
+      <div className="  min-h-screen ">
   
-   <div className="relative z-10" >
+  
        <header className="   w-full  text-black dark:text-white h-[60px] flex items-center  space-x-2 md:px-12 p-2
           ">
         <a   href="https://github.com/ilaydaufelek/MustUI" target="_blank" rel="noopener noreferrer"  className="rounded-full bg-zinc-900  hover:bg-zinc-700 transition-all  w-8 h-8 flex items-center justify-center  ml-auto  cursor-pointer  text-white " >
@@ -31,7 +31,7 @@ import { useModal } from "@/hooks/use-modal-store"
        </div>
      
       <div className="  min-h-screen flex  justify-center  mt-4 md:mt-8 ">
-      <div className="h-full max-w-[1400px] w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 p-6  ">
+      <div className="h-full max-w-[1400px] w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-3 p-6  ">
      
 
       <div className=" relative group border border-zinc-300 dark:border-zinc-800 rounded-md w-full h-[100px]  transition-all flex items-center justify-center ">
@@ -68,7 +68,7 @@ import { useModal } from "@/hooks/use-modal-store"
           
       
       </div>
-     </div>
+     
    </div>
       <ModalProvider/>
    

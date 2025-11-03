@@ -42,11 +42,13 @@ export const DropdownMenu=({children,className,...props}:DropdownMenuProps)=>{
 export const DropdownMenuTrigger=({children,className,...props}:DropdownMenuTriggerProps)=>{
  const ctx=useContext(DropdownContext)
  if (!ctx) throw new Error("DropdownTrigger must be used within DropdownMenu");
- return <div className={cn("px-2 py-2 border flex items-center border-zinc-600/30 rounded-md cursor-default overflow-hidden  ",className)}
+ return (
+ <div className={cn("px-2 py-2 border flex items-center border-zinc-600/30 rounded-md cursor-default overflow-hidden  ",className)}
  onClick={()=>ctx?.setOpen(!ctx.open)}
   {...props} >
     {children}
     </div>
+  )
 }
 
 export const DropdownMenuContent=({children,className, ...props}:DropdownMenuContentProps)=>{

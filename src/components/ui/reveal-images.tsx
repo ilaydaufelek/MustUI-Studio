@@ -24,7 +24,7 @@ function RevealImageListItem({ text, images }: ShowImageListItemProps) {
     return () => clearInterval(interval);
   }, [images.length]);
 
-  const container = "absolute  right-0 -top-2 z-40  h-16 w-12  md:h-20  md:w-16 rounded-md bg-[#EEEEEF] dark:shadow-white shadow-2xl shadow-black  ";
+  const container = "absolute  right-0  top-1  md:-top-2   z-40  h-12 w-16  md:h-16  md:w-20 rounded-md  dark:shadow-white shadow-2xl shadow-black  ";
 
   return (
     <div className="relative h-fit w-fit overflow-visible py-8  ">
@@ -42,7 +42,7 @@ function RevealImageListItem({ text, images }: ShowImageListItemProps) {
               : "opacity-0 scale-0 rotate-180 "
           )}
         >
-          <img alt={img.alt} src={img.src} className="h-full w-full object-contain rounded-md   " />
+          <img alt={img.alt} src={img.src} className="h-full w-full object-contain  rounded-md   " />
         </div>
       ))}
     </div>
@@ -56,15 +56,15 @@ function RevealImageList() {
       text: "..more",
       images: [
         {
-          src: "/alert.png",
+          src: "accordion.png",
           alt: "Image 1",
         },
         {
-          src: "/dialog.png",
+          src: "dialog.png",
           alt: "Image 2",
         },
         {
-          src: "/dropdown.png",
+          src: "dropdown.png",
           alt: "Image 3",
         },
       ],

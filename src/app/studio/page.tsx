@@ -81,10 +81,6 @@ const StudioPage = () => {
        </div>
       
     
-        <div className="relative border border-zinc-300 dark:border-zinc-800 rounded-md  w-full h-[200px] transition-all flex items-center justify-center " >
-         <Accordion/> </div>
-          <div className="relative border border-zinc-300 dark:border-zinc-800 rounded-md  w-full h-[200px] transition-all flex items-center justify-center " >6kutu</div>
-          <div className="relative border border-zinc-300 dark:border-zinc-800 rounded-md  w-full h-[200px] transition-all flex items-center justify-center  " > 7 kutu</div>
           
       </div>
       </div>

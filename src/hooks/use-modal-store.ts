@@ -5,7 +5,7 @@ type ModalType='buttonModal' | 'inputModal' | 'dialogModal' | 'dropdownMenuModal
 interface ModalStore {
   type: ModalType | null;
   isOpen: boolean;
-  codeKey: string | null; // hangi kod gösterilecek
+  codeKey: string | null; 
   onOpen: (type: ModalType, codeKey: string) => void;
   onClose: () => void;
 }

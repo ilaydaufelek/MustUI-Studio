@@ -43,8 +43,8 @@ const AccordionPage=()=>{
     return(
         <div className=" min-h-screen ">
   
-       <header className="   w-full  text-black dark:text-white h-[60px] flex items-center  space-x-2 md:px-12 p-2
-          ">
+       <header className="   w-full  text-black dark:text-white h-[60px] flex items-center  space-x-2 md:px-12 p-2 ">
+         
         <a   href="https://github.com/ilaydaufelek/MustUI" target="_blank" rel="noopener noreferrer"  className="rounded-full bg-zinc-900  hover:bg-zinc-700 transition-all  w-8 h-8 flex items-center justify-center  ml-auto  cursor-pointer  text-white " >
          <Github className="w-4 h-4  " /></a>
         <span className="m-2" ><ThemeToggle/></span>
@@ -65,7 +65,9 @@ const AccordionPage=()=>{
       <div className="h-full max-w-[1400px] w-full grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 gap-4 p-6  ">
      
 
-         <div className="relative border border-zinc-300 dark:border-zinc-800 rounded-md w-full transition-all">
+  <div className=" space-y-2" >
+    <p className="text-2xl font-bold" >Basic Accordion</p>
+   <div className="relative border border-zinc-300 dark:border-zinc-800 rounded-md w-full transition-all">
   <Accordion className="w-full">
     {items.map((item) => (
     <AccordionItem value={item.id} key={item.id} className="">
@@ -79,9 +81,50 @@ const AccordionPage=()=>{
     ))}
   </Accordion>
 </div>
+  </div>
 
-<div>
- 
+<div className=" space-y-2" >
+ <p className="text-2xl font-bold " >Accordion with Icon</p>
+  <div className="relative border border-zinc-300 dark:border-zinc-800 rounded-md w-full transition-transform duration-1000 ">
+  
+  <Accordion  className="w-full">
+    {items.map((itemm) => (
+    <AccordionItem value={itemm.id} key={itemm.id} className="">
+    <AccordionTrigger>
+    <span className="flex items-center gap-3">
+    <itemm.icon size={16} className="shrink-0 opacity-60" aria-hidden="true" />
+    <span>{itemm.title}</span>
+    </span>
+    </AccordionTrigger>
+    <AccordionContent>
+    {itemm.content}
+    </AccordionContent>
+    </AccordionItem>
+    ))}
+  </Accordion>
+  </div>
+</div>
+
+  <div className=" space-y-2" >
+    <p className="text-2xl font-bold" >Multi Accordion</p>
+   <div className="relative border border-zinc-300 dark:border-zinc-800 rounded-md w-full transition-all">
+  <Accordion multiple className="w-full">
+    {items.map((item) => (
+    <AccordionItem value={item.id} key={item.id} className="">
+    <AccordionTrigger>
+    {item.title}
+    </AccordionTrigger>
+    <AccordionContent>
+    {item.content}
+    </AccordionContent>
+    </AccordionItem>
+    ))}
+  </Accordion>
+</div>
+  </div>
+
+  <div className=" space-y-2" >
+ <p className="text-2xl font-bold " > Multi Accordion with Icon</p>
   <div className="relative border border-zinc-300 dark:border-zinc-800 rounded-md w-full transition-transform duration-1000 ">
   
   <Accordion multiple className="w-full">
@@ -101,18 +144,17 @@ const AccordionPage=()=>{
   </Accordion>
   </div>
 </div>
-  <div className=" relative border border-zinc-300 dark:border-zinc-800 rounded-md  w-full h-[200px] transition-all flex items-center justify-center" >
-       
-  </div>
+
        
        
          
           
       
       </div>
+       
      </div>
-  
       <ModalProvider/>
+   
    
     </div>
     )

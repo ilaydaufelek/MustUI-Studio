@@ -42,7 +42,7 @@ function RevealImageListItem({ text, images }: ShowImageListItemProps) {
               : "opacity-0 scale-0 rotate-180 "
           )}
         >
-          <img alt={img.alt} src={img.src} className="h-full w-full object-contain  rounded-md   " />
+          <img alt={img.alt} src={img.src} className="h-full w-full object-contain rounded-md   " />
         </div>
       ))}
     </div>

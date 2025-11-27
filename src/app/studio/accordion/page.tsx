@@ -80,8 +80,11 @@ const AccordionPage=()=>{
   </Accordion>
 </div>
 
-<div className="relative border border-zinc-300 dark:border-zinc-800 rounded-md w-full transition-transform duration-1000 ">
-  <Accordion className="w-full">
+<div>
+ 
+  <div className="relative border border-zinc-300 dark:border-zinc-800 rounded-md w-full transition-transform duration-1000 ">
+  
+  <Accordion multiple className="w-full">
     {items.map((itemm) => (
     <AccordionItem value={itemm.id} key={itemm.id} className="">
     <AccordionTrigger>
@@ -97,9 +100,10 @@ const AccordionPage=()=>{
     ))}
   </Accordion>
   </div>
+</div>
   <div className=" relative border border-zinc-300 dark:border-zinc-800 rounded-md  w-full h-[200px] transition-all flex items-center justify-center" >
        
-        </div>
+  </div>
        
        
          

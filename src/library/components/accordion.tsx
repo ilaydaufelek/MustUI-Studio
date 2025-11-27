@@ -4,8 +4,9 @@ import { ChevronDown} from "lucide-react";
 import React, { useContext,createContext,useState } from "react"
 
 interface AccordionContextType{
-   openItem: string | null
-  setOpenItem: (value: string | null) => void
+   openItem: string[];
+  setOpenItem: (value: string[]) => void
+  multiple?:boolean
     
 }
 
@@ -18,6 +19,7 @@ interface AccordionItemContextType{
 interface AccordionProps extends React.HTMLAttributes<HTMLDivElement> {
  children:React.ReactNode;
  className?:string;
+ multiple?:boolean;
 
 }
 
@@ -43,10 +45,10 @@ interface AccordionContentProps extends React.HTMLAttributes<HTMLDivElement> {
 const AccordionContext=createContext<AccordionContextType | null>(null)
 const AccordionItemContext=createContext<AccordionItemContextType |null>(null)
 
-export const Accordion=({children,className,...props}:AccordionProps)=>{
-    const [openItem, setOpenItem] = useState<string | null>(null)
+export const Accordion=({children,className,multiple=false, ...props}:AccordionProps)=>{
+    const [openItem, setOpenItem] = useState<string[]>([])
     return(
-       <AccordionContext.Provider value={{openItem, setOpenItem }}>
+       <AccordionContext.Provider value={{openItem, setOpenItem,multiple }}>
          <div className={cn("relative inline-block  py-2 p-8   ",className)}{...props} >
       {children}
       </div>
@@ -63,7 +65,7 @@ export const AccordionItem=({children,className,value,...props}:AccordionItemPro
       <div className={cn(" p-2 ", className)} {...props}>
         {children}
       </div>
-      <div className="w-full h-[0.3px]  bg-zinc-600/20 last:hidden" ></div>
+      <div className="w-full h-[0.3px]  bg-zinc-600/20 last:hidden" />
    </AccordionItemContext.Provider>
 )
 }
@@ -72,25 +74,36 @@ export const AccordionItem=({children,className,value,...props}:AccordionItemPro
 export const AccordionTrigger=({children,className,...props}:AccordionTriggerProps)=>{
     const ctx = useContext(AccordionContext)
     const item=useContext(AccordionItemContext)
-    const isOpen=ctx?.openItem === item?.value
-     if (!ctx || !item)
-    throw new Error("AccordionTrigger must be used within AccordionItem")
-
+  if(!ctx || !item) throw new Error('AccordionTrigger must be used within AccordionItem')
+    const isOpen=ctx.openItem.includes(item.value)
+  
+  const toggleItem=()=>{
+    if(ctx.multiple){
+      if(isOpen){
+      ctx.setOpenItem(ctx.openItem.filter(i=>i!== item.value))
+      }
+      else{
+        ctx.setOpenItem([...ctx.openItem,item.value])
+      }
+    }
+  else{
+    ctx.setOpenItem(isOpen ? [] : [item.value])
+  }
+  }
   return (
     <div
-      onClick={()=>ctx?.setOpenItem(isOpen ? null : item?.value)}
-      className={cn("flex items-center justify-between cursor-pointer font-semibold text-md ", className)}
+      onClick={toggleItem}
+      className={cn("flex items-center justify-between cursor-pointer font-semibold text-md", className)}
       {...props}
     >
       {children}
-      <div
-  className={cn(
-    "transition-transform duration-500 flex items-center justify-center  ",
-    isOpen ? "rotate-180" : "rotate-0"
-  )}
->
-  <ChevronDown className="w-4 h-4 text-zinc-500" />
-</div>
+
+      <ChevronDown
+        className={cn(
+          "transition-transform duration-500 w-4 h-4",
+          isOpen ? "rotate-180" : "rotate-0"
+        )}
+      />
     </div>
   )
 }
@@ -98,9 +111,9 @@ export const AccordionTrigger=({children,className,...props}:AccordionTriggerPro
 export const AccordionContent=({children,className,...props}:AccordionContentProps)=>{
      const ctx = useContext(AccordionContext)
      const item = useContext(AccordionItemContext)
-    if (!ctx || !item)
-    throw new Error("AccordionContent must be used within AccordionItem")
-   if(ctx?.openItem !==item?.value) return null
+    if (!ctx || !item) throw new Error("AccordionContent must be used within AccordionItem")
+   const isOpen=ctx.openItem.includes(item.value)
+   if(!isOpen) return null
 
   return (
     <div className={cn("mt-2 text-sm text-zinc-500 ", className)} {...props}>

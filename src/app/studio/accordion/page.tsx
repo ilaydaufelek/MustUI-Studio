@@ -66,7 +66,7 @@ const AccordionPage=()=>{
      
 
   <div className=" space-y-2" >
-    <p className="text-2xl font-bold" >Basic Accordion</p>
+    <p className="text-xl md:text-2xl font-bold" >Basic Accordion</p>
    <div className="relative border border-zinc-300 dark:border-zinc-800 rounded-md w-full transition-all">
   <Accordion className="w-full">
     {items.map((item) => (
@@ -84,7 +84,7 @@ const AccordionPage=()=>{
   </div>
 
 <div className=" space-y-2" >
- <p className="text-2xl font-bold " >Accordion with Icon</p>
+ <p className="text-xl md:text-2xl font-bold " >Accordion with Icon</p>
   <div className="relative border border-zinc-300 dark:border-zinc-800 rounded-md w-full transition-transform duration-1000 ">
   
   <Accordion  className="w-full">
@@ -106,7 +106,7 @@ const AccordionPage=()=>{
 </div>
 
   <div className=" space-y-2" >
-    <p className="text-2xl font-bold" >Multi Accordion</p>
+    <p className="text-xl md:text-2xl font-bold" >Multi Accordion</p>
    <div className="relative border border-zinc-300 dark:border-zinc-800 rounded-md w-full transition-all">
   <Accordion multiple className="w-full">
     {items.map((item) => (
@@ -124,7 +124,7 @@ const AccordionPage=()=>{
   </div>
 
   <div className=" space-y-2" >
- <p className="text-2xl font-bold " > Multi Accordion with Icon</p>
+ <p className="text-xl md:text-2xl  font-bold " > Multi Accordion with Icon</p>
   <div className="relative border border-zinc-300 dark:border-zinc-800 rounded-md w-full transition-transform duration-1000 ">
   
   <Accordion multiple className="w-full">

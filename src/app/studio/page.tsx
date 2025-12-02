@@ -44,28 +44,28 @@ const StudioPage = () => {
       <div className="  min-h-screen flex  justify-center  mt-4 md:mt-8 ">
       <div className="h-full max-w-[1400px] w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 p-6  ">
       <div className=" text-center space-y-3" >
-       <div onClick={()=>router.push('/studio/accordion')} className="border border-zinc-300 dark:border-zinc-800 rounded-md  w-full h-[200px] flex items-center justify-center cursor-pointer  transition-all" >
+       <div onClick={()=>router.push('/studio/accordion')} className="border border-zinc-300 dark:border-zinc-800 rounded-md bg-zinc-50 dark:bg-zinc-900  w-full h-[200px] flex items-center justify-center cursor-pointer  transition-all" >
         <img className="w-[150px]" src="accordion.png" alt="" />
        </div>
       <p onClick={()=>router.push('/studio/accordion')} className="text-sm font-semibold hover:underline cursor-pointer " >Accordion</p>
        </div>
        
        <div className=" text-center space-y-3" >
-       <div onClick={()=>router.push('/studio/button')} className="border border-zinc-300 dark:border-zinc-800 rounded-md  w-full h-[200px] flex items-center justify-center cursor-pointer  transition-all" >
+       <div onClick={()=>router.push('/studio/button')} className="border border-zinc-300 dark:border-zinc-800 rounded-md bg-zinc-50 dark:bg-zinc-900  w-full h-[200px] flex items-center justify-center cursor-pointer  transition-all" >
         <img className="w-[100px]  " src="button.png" alt="" />
        </div>
       <p onClick={()=>router.push('/studio/button')} className="text-sm font-semibold hover:underline cursor-pointer " >Button</p>
        </div>
 
          <div className=" text-center space-y-3" >
-       <div onClick={()=>router.push('/studio/dialog')} className="border border-zinc-300 dark:border-zinc-800 rounded-md  w-full h-[200px] flex items-center justify-center cursor-pointer  transition-all" >
+       <div onClick={()=>router.push('/studio/dialog')} className="border border-zinc-300 dark:border-zinc-800 rounded-md bg-zinc-50 dark:bg-zinc-900  w-full h-[200px] flex items-center justify-center cursor-pointer  transition-all" >
       <img className="w-[150px]  " src="dialog.png" alt="" />
        </div>
       <p onClick={()=>router.push('/studio/dialog')} className="text-sm font-semibold hover:underline cursor-pointer " >Dialog</p>
        </div>
 
         <div className=" text-center space-y-3" >
-       <div onClick={()=>router.push('/studio/dropdown')} className="border border-zinc-300 dark:border-zinc-800 rounded-md  w-full h-[200px] flex items-center justify-center cursor-pointer  transition-all" >
+       <div onClick={()=>router.push('/studio/dropdown')} className="border border-zinc-300 dark:border-zinc-800 rounded-md bg-zinc-50 dark:bg-zinc-900 w-full h-[200px] flex items-center justify-center cursor-pointer  transition-all" >
         <img className="w-[150px]  " src="dropdown.png" alt="" />
        </div>
       <p onClick={()=>router.push('/studio/dropdown')} className="text-sm font-semibold hover:underline cursor-pointer " >Dropdown</p>
@@ -74,11 +74,20 @@ const StudioPage = () => {
 
 
        <div className=" text-center space-y-3" >
-       <div onClick={()=>router.push('/studio/input')} className="border border-zinc-300 dark:border-zinc-800 rounded-md  w-full h-[200px] flex items-center justify-center cursor-pointer  transition-all" >
+       <div onClick={()=>router.push('/studio/input')} className="border border-zinc-300 dark:border-zinc-800 rounded-md bg-zinc-50 dark:bg-zinc-900  w-full h-[200px] flex items-center justify-center cursor-pointer  transition-all" >
         <img className="w-[150px] h-[27px] " src="input.png" alt="" />
        </div>
       <p onClick={()=>router.push('/studio/input')} className="text-sm font-semibold hover:underline cursor-pointer " >Input</p>
        </div>
+
+       
+       <div className=" text-center space-y-3" >
+       <div onClick={()=>router.push('/studio/textarea')} className="border border-zinc-300 dark:border-zinc-800 rounded-md bg-zinc-50 dark:bg-zinc-900 w-full h-[200px] flex items-center justify-center cursor-pointer  transition-all" >
+        <img className="w-[150px]  " src="textarea.png" alt="" />
+       </div>
+      <p onClick={()=>router.push('/studio/textarea')} className="text-sm font-semibold hover:underline cursor-pointer " >Textarea</p>
+       </div>
+      
       
     
           

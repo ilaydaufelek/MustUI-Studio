@@ -1,8 +1,8 @@
 'use client'
 import { ThemeToggle } from "@/components/theme-toggle"
-import { Accordion, AccordionContent, AccordionItem,  AccordionTrigger } from "@/library/components/accordion"
+import { Accordion, AccordionContent, AccordionItem,  AccordionTrigger } from "must-ui"
 import { ModalProvider } from "@/provider/modal-provider"
-import { Accessibility,  Code2,  Gauge, Github, HandHelping, Palette, } from "lucide-react"
+import {  Code2,  Gauge, Github, HandHelping, Palette, } from "lucide-react"
 import { Button } from "must-ui"
 
 
@@ -62,7 +62,7 @@ const AccordionPage=()=>{
        </div>
      
       <div className="  min-h-screen flex  justify-center  mt-4 md:mt-8 ">
-      <div className="h-full max-w-[1400px] w-full grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 gap-4 p-6  ">
+      <div className="h-full max-w-[1400px] w-full grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 gap-4 p-6 space-y-4  ">
      
 
   <div className=" space-y-2" >
@@ -95,6 +95,7 @@ const AccordionPage=()=>{
     <itemm.icon size={16} className="shrink-0 opacity-60" aria-hidden="true" />
     <span>{itemm.title}</span>
     </span>
+    
     </AccordionTrigger>
     <AccordionContent>
     {itemm.content}
@@ -136,7 +137,7 @@ const AccordionPage=()=>{
     <span>{itemm.title}</span>
     </span>
     </AccordionTrigger>
-    <AccordionContent>
+    <AccordionContent >
     {itemm.content}
     </AccordionContent>
     </AccordionItem>

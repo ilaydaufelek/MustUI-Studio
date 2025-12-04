@@ -34,16 +34,16 @@ const TextareaPage=()=>{
 
        <div className=" relative group border border-zinc-300 dark:border-zinc-800 rounded-md w-full min-h-[200px]  transition-all flex items-center justify-center ">
       <div   className="absolute top-0 right-0 m-2  opacity-0 group-hover:opacity-100 transition-opacity  text-zinc-800 dark:text-white px-2  rounded-md cursor-pointer"><Code className="w-4 h-4" /></div>
-      <Textarea className="focus:ring-blue-300 focus:dark:ring-blue-600/40 " />
+      <Textarea className="focus:ring-blue-300 focus:dark:ring-blue-600/40  focus:border-blue-500 dark:focus:border-blue-700 " />
       </div>
        <div className=" relative group border border-zinc-300 dark:border-zinc-800 rounded-md w-full min-h-[200px]  transition-all flex items-center justify-center ">
       <div   className="absolute top-0 right-0 m-2  opacity-0 group-hover:opacity-100 transition-opacity  text-zinc-800 dark:text-white px-2  rounded-md cursor-pointer"><Code className="w-4 h-4" /></div>
-      <Textarea/>
+      <Textarea defaultValue={"merhaba!"} />
       </div>
 
        <div className=" relative group border border-zinc-300 dark:border-zinc-800 rounded-md w-full min-h-[200px]  transition-all flex items-center justify-center ">
       <div   className="absolute top-0 right-0 m-2  opacity-0 group-hover:opacity-100 transition-opacity  text-zinc-800 dark:text-white px-2  rounded-md cursor-pointer"><Code className="w-4 h-4" /></div>
-      <Textarea/>
+      <Textarea  className=" focus:ring-pink-300 focus:dark:ring-pink-400/40  focus:border-pink-500 dark:focus:border-pink-700" placeholder="Bir şeyler yazmayı dene" />
       </div>
         </div>
        </div>

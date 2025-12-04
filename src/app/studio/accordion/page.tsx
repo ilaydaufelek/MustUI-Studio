@@ -2,8 +2,9 @@
 import { ThemeToggle } from "@/components/theme-toggle"
 import { Accordion, AccordionContent, AccordionItem,  AccordionTrigger } from "must-ui"
 import { ModalProvider } from "@/provider/modal-provider"
-import {  Code2,  Gauge, Github, HandHelping, Palette, } from "lucide-react"
+import {  Code2,  Gauge, HandHelping, Palette, } from "lucide-react"
 import { Button } from "must-ui"
+import { useRouter } from "next/navigation"
 
 
 const items = [
@@ -40,13 +41,12 @@ const items = [
 
 
 const AccordionPage=()=>{
+ const router=useRouter()
     return(
         <div className=" min-h-screen ">
   
-       <header className="   w-full  text-black dark:text-white h-[60px] flex items-center  space-x-2 md:px-12 p-2 ">
-         
-        <a   href="https://github.com/ilaydaufelek/MustUI" target="_blank" rel="noopener noreferrer"  className="rounded-full bg-zinc-900  hover:bg-zinc-700 transition-all  w-8 h-8 flex items-center justify-center  ml-auto  cursor-pointer  text-white " >
-         <Github className="w-4 h-4  " /></a>
+         <header className="   w-full  text-black dark:text-white h-[60px] flex items-center justify-end space-x-6 p-2">
+       <p onClick={()=>router.push('')} className="text-sm font-semibold underline cursor-pointer  " >Installation</p>
         <span className="m-2" ><ThemeToggle/></span>
       </header>
       <div className="  w-full  flex flex-col items-center justify-center mt-12 space-y-6  " >

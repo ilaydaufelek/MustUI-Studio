@@ -3,12 +3,10 @@
 
 import { ThemeToggle } from "@/components/theme-toggle";
 import {Input,Button} from 'must-ui'
-import { ChevronDown, Code2, Github } from "lucide-react";
+import {  Github } from "lucide-react";
 import { ModalProvider } from "@/provider/modal-provider";
 import { useModal } from "@/hooks/use-modal-store";
-import { Dialog, DialogCancel, DialogContent, DialogDescription, DialogFooter, DialogSubmit, DialogTitle, DialogTrigger } from "must-ui";
-import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/library/components/dropdown";
-import { Accordion } from "@/library/components/accordion";
+
 import { useRouter } from "next/navigation";
 
 
@@ -23,10 +21,8 @@ const StudioPage = () => {
     <div className=" relative min-h-screen ">
    <div className="absolute inset-0 z-0 h-full w-full bg-white bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px] dark:bg-black dark:bg-[radial-gradient(#19191c_1px,transparent_1px)]  "></div>
    <div className="relative z-10" >
-       <header className="   w-full  text-black dark:text-white h-[60px] flex items-center  space-x-2 md:px-12 p-2
-          ">
-        <a   href="https://github.com/ilaydaufelek/MustUI" target="_blank" rel="noopener noreferrer"  className="rounded-full bg-zinc-900  hover:bg-zinc-700 transition-all  w-8 h-8 flex items-center justify-center  ml-auto  cursor-pointer  text-white " >
-         <Github className="w-4 h-4  " /></a>
+       <header className="   w-full  text-black dark:text-white h-[60px] flex items-center justify-end space-x-6 p-2">
+       <p onClick={()=>router.push('')} className="text-sm font-semibold underline cursor-pointer  " >Installation</p>
         <span className="m-2" ><ThemeToggle/></span>
       </header>
       <div className="  w-full  flex flex-col items-center justify-center mt-12 space-y-6  " >

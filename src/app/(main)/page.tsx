@@ -11,12 +11,17 @@ export default function HomePage() {
   
   return (
    <div className="w-screen h-screen dark:bg-black bg-white" >
-     <header className="fixed top-0 left-0 w-full  text-black dark:text-white h-[60px] flex items-center  space-x-2 md:px-12 p-2
-        font-bold text-2xl z-50   backdrop-blur-xs  ">
-        <span className="cursor-pointer">MustUI Studio</span>
-        <a   href="https://github.com/ilaydaufelek/MustUI" target="_blank" rel="noopener noreferrer"  className="rounded-full bg-zinc-900  hover:bg-zinc-700 transition-all  w-8 h-8 flex items-center justify-center  ml-auto  cursor-pointer  text-white " >
-         <Github className="w-4 h-4  " /></a>
+     <header className="fixed top-0 left-0 w-full  text-black dark:text-white h-[60px] flex items-center p-6
+        font-bold text-xl md:text-2xl z-50   backdrop-blur-xs  ">
+        <span className="  cursor-pointer">MustUI Studio</span>
+        <div className="flex items-center ml-auto space-x-4" >
+        <p onClick={()=>router.push('')} className="text-sm font-semibold underline cursor-pointer  " >Installation</p>
         <span className="m-2" ><ThemeToggle/></span>
+
+        <a   href="https://github.com/ilaydaufelek/MustUI" target="_blank" rel="noopener noreferrer"  className="rounded-full bg-zinc-900  hover:bg-zinc-700 transition-all  w-8 h-8 flex items-center justify-center  mx-2  cursor-pointer  text-white " >
+         <Github className="w-4 h-4  " />
+         </a>
+        </div>
       </header>
      <div className="flex flex-col items-center justify-center text-center min-h-screen bg-background text-foreground  space-y-6 ">
        <div className="flex flex-row items-center justify-center gap-4 flex-wrap">

@@ -1,6 +1,7 @@
 'use client'
 import { ThemeToggle } from "@/components/theme-toggle"
-import { Sheet, SheetContent, SheetTrigger } from "@/library/components/sheet"
+import { Input } from "@/library/components/input"
+import { Sheet, SheetContent, SheetDescription, SheetFooter, SheetHeader, SheetTitle, SheetTrigger } from "@/library/components/sheet"
 
 import { Code, Github } from "lucide-react"
 import { Button } from "must-ui"
@@ -26,18 +27,27 @@ const SheetPage=()=>{
   } > Got to GitHub</Button>
        </div>
 
-       <div  className="  min-h-screen flex  justify-center  mt-4 md:mt-8 " >
+       <div  className="min-h-screen flex  justify-center  mt-4 md:mt-8 " >
         <div  className="h-full max-w-[1400px] w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-3 p-6  " >
-          <div className=" relative group border border-zinc-300 dark:border-zinc-800 rounded-md w-full min-h-[200px]  transition-all flex items-center justify-center ">
-            <div   className="absolute top-0 right-0 m-2  opacity-0 group-hover:opacity-100 transition-opacity  text-zinc-800 dark:text-white px-2  rounded-md cursor-pointer"><Code className="w-4 h-4" /></div>
-            <Sheet>
-              <SheetTrigger>Open sheet</SheetTrigger>
-              <SheetContent  side="left" >
+        <div className=" relative group border border-zinc-300 dark:border-zinc-800 rounded-md w-full min-h-[200px]  transition-all flex items-center justify-center ">
+        <div  className="absolute top-0 right-0 m-2  opacity-0 group-hover:opacity-100 transition-opacity  text-zinc-800 dark:text-white px-2  rounded-md cursor-pointer"><Code className="w-4 h-4" /></div>
+        <Sheet>
+          <SheetTrigger>Open sheet</SheetTrigger>
+          <SheetContent  side="left" >
                 
-               dd
-              </SheetContent>
-            </Sheet>
-            </div>
+          <SheetHeader>
+          <SheetTitle>merhaba</SheetTitle>
+          </SheetHeader>
+          <SheetDescription className="space-y-4" >
+         <Input size="lg" />
+         <Input placeholder="Full Name"  size="lg"/>
+        </SheetDescription>
+        <SheetFooter>
+        <Button>kabul</Button>
+        </SheetFooter>
+        </SheetContent>
+        </Sheet>
+        </div>
         </div>
        </div>
   </div>

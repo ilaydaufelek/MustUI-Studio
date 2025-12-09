@@ -23,10 +23,27 @@ className?:string
 side?:'left' | 'right' |'top' |'bottom'
 }
 
-interface SheetHeader extends HTMLAttributes<HTMLDivElement> {
+interface SheetHeaderProps extends HTMLAttributes<HTMLDivElement> {
 className?:string;
 children:React.ReactNode
 }
+
+interface SheetTitleProps extends HTMLAttributes<HTMLDivElement> {
+className?:string;
+children:React.ReactNode
+}
+
+
+interface SheetDescriptionProps extends HTMLAttributes<HTMLDivElement> {
+className?:string;
+children:React.ReactNode
+}
+
+interface SheetFooterProps extends HTMLAttributes<HTMLDivElement> {
+className?:string;
+children:React.ReactNode
+}
+
 
 const sides: Record<string, string> = {
   left: "left-0 h-screen w-[260px] md:w-[360px]   ",
@@ -79,14 +96,16 @@ export const SheetContent=({children,className, side='right',...props }:SheetCon
 
   return(
        <div onClick={()=>ctx.setOpen(false)}
-    className="fixed inset-0 z-50 backdrop-blur-md"
+    className="fixed inset-0 z-50 backdrop-blur-md  "
     {...props}>
   
     <div
       className={cn(
-        "h-screen w-[300px] bg-white dark:bg-black absolute p-2 rounded-md shadow-md ",
+        "h-screen w-[300px] bg-white dark:bg-black absolute p-2 rounded-md shadow-md border border-zinc-600/20 ",
+        className,
         sides[side]
       )}
+       onClick={(e) => e.stopPropagation()}
     >
       {children}
     </div>
@@ -95,10 +114,38 @@ export const SheetContent=({children,className, side='right',...props }:SheetCon
 
 }
 
-export const SheetHeader=()=>{
+export const SheetHeader=({children,className,...props}:SheetHeaderProps)=>{
+  const ctx=useContext(SheetContext)
   return(
-    <div>
+    <div className={cn('flex items-center justify-between',className)}{...props} >
+      {children}
+    <div 
+    onClick={()=>ctx?.setOpen(false)}
+     className="w-6 h-6 border text-sm cursor-pointer border-zinc-600 rounded-md  flex items-center justify-center" >X</div>
+    </div>
+  
+)}
 
+export const SheetTitle=({children,className,...props}:SheetTitleProps)=>{
+  return(
+    <div className={cn('font-semibold',className)}{...props} >
+     {children}
+    </div>
+  )
+}
+
+export const SheetDescription=({children,className,...props}:SheetDescriptionProps)=>{
+  return(
+    <div className={cn('py-4',className)}{...props} >
+     {children}
+    </div>
+  )
+}
+
+export const SheetFooter=({children,className,...props}:SheetFooterProps)=>{
+  return(
+    <div className={cn('absolute bottom-0 right-0 p-3',className)}{...props} >
+     {children}
     </div>
   )
 }

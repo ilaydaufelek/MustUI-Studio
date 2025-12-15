@@ -26,7 +26,7 @@ const StudioPage = () => {
         <span className="m-2" ><ThemeToggle/></span>
       </header>
       <div className="  w-full  flex flex-col items-center justify-center mt-12 space-y-6  " >
-        <div className="  text-5xl md:text-7xl  font-bold text-center   " >
+        <div className=" text-5xl md:text-7xl  font-bold text-center   " >
         MustUI Studio
         </div>
         <p className=" text-center text-lg text-zinc-400 dark:text-zinc-300 text-md md:text-lg  max-w-3xl  leading-relaxed font-semibold  " >
@@ -83,10 +83,14 @@ const StudioPage = () => {
        </div>
       <p onClick={()=>router.push('/studio/textarea')} className="text-sm font-semibold hover:underline cursor-pointer " >Textarea</p>
        </div>
-      
-      
-    
-          
+
+        <div className=" text-center space-y-3" >
+       <div onClick={()=>router.push('/studio/sheet')} className="border border-zinc-300 dark:border-zinc-800 rounded-md bg-zinc-50 dark:bg-zinc-900 w-full h-[200px] flex items-center justify-center cursor-pointer  transition-all" >
+        <img className="w-[150px]" src="sheet.png" alt="" />
+       </div>
+      <p onClick={()=>router.push('/studio/sheet')} className="text-sm font-semibold hover:underline cursor-pointer " >Sheet</p>
+       </div>
+         
       </div>
       </div>
      </div>

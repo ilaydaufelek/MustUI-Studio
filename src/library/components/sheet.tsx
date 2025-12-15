@@ -46,8 +46,8 @@ children:React.ReactNode
 
 
 const sides: Record<string, string> = {
-  left: "left-0 h-screen w-[260px] md:w-[360px]   ",
-  right: "right-0 h-screen w-[260px] md:w-[360px]  ",
+  left: "left-0 h-screen w-[260px] md:w-[360px] ",
+  right: "right-0 h-screen w-[260px] md:w-[360px]",
   top: "top-0 w-screen h-auto",
   bottom: "bottom-0 w-screen h-auto"
 };

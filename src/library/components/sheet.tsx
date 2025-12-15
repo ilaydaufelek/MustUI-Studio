@@ -101,7 +101,7 @@ export const SheetContent=({children,className, side='right',...props }:SheetCon
   
     <div
       className={cn(
-        "h-screen w-[300px] bg-white dark:bg-black absolute p-2 rounded-md shadow-md border border-zinc-600/20 ",
+        "max-h-screen w-[300px] bg-white dark:bg-black absolute p-2 rounded-md shadow-md border border-zinc-600/20 ",
         className,
         sides[side]
       )}

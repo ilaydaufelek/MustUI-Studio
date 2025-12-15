@@ -1,7 +1,7 @@
 'use client'
 import { ThemeToggle } from "@/components/theme-toggle"
 import { Input } from "@/library/components/input"
-import { Sheet, SheetContent, SheetDescription, SheetFooter, SheetHeader, SheetTitle, SheetTrigger } from "@/library/components/sheet"
+import { Sheet, SheetClose, SheetContent, SheetDescription, SheetFooter, SheetHeader, SheetTitle, SheetTrigger } from "@/library/components/sheet"
 
 import { Code, Github } from "lucide-react"
 import { Button } from "must-ui"
@@ -36,14 +36,26 @@ const SheetPage=()=>{
           <SheetContent  side="left" >
                 
           <SheetHeader>
-          <SheetTitle>merhaba</SheetTitle>
+          <SheetTitle>Edit Profile</SheetTitle>
           </SheetHeader>
-          <SheetDescription className="space-y-4" >
-         <Input size="lg" />
-         <Input placeholder="Full Name"  size="lg"/>
-        </SheetDescription>
-        <SheetFooter>
-        <Button>kabul</Button>
+          <SheetDescription>
+            Make changes to your profile here. Click save when you&apos;re done.
+          </SheetDescription>
+          <div className="grid flex-1 auto-rows-min gap-4 mt-3 ">
+          <div className="grid gap-3  ">
+            <label className="dark:text-zinc-200 text-zinc-800 text-sm " htmlFor="sheet-demo-name">Name</label>
+            <Input size="full" id="sheet-demo-name" defaultValue="Ethan Caldwell" />
+          </div>
+          <div className="grid gap-3">
+            <label className="dark:text-zinc-200 text-zinc-800 text-sm " htmlFor="sheet-demo-username">Username</label>
+            <Input size="full" id="sheet-demo-username" defaultValue="@ethan.caldwell" />
+          </div>
+        </div>
+        <SheetFooter className="" >
+        <SheetClose asChild >
+          <Button>Cancel</Button>
+        </SheetClose>
+        <Button>Accept</Button>
         </SheetFooter>
         </SheetContent>
         </Sheet>

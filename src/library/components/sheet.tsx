@@ -44,13 +44,19 @@ className?:string;
 children:React.ReactNode
 }
 
+interface SheetCloseProps {
+  asChild?: boolean
+  children: React.ReactElement<{
+    onClick?: React.MouseEventHandler
+  }>
+}
 
 const sides: Record<string, string> = {
-  left: "left-0 h-screen w-[260px] md:w-[360px] ",
-  right: "right-0 h-screen w-[260px] md:w-[360px]",
-  top: "top-0 w-screen h-auto",
-  bottom: "bottom-0 w-screen h-auto"
-};
+  left: "left-0 w-[260px] md:w-[360px]",
+  right: "right-0 w-[260px] md:w-[360px]",
+  top: "top-0 w-screen",
+  bottom: "bottom-0 w-screen"
+}
 
 export  const SheetContext=createContext<SheetContextProps | null> (null) 
 
@@ -100,13 +106,14 @@ export const SheetContent=({children,className, side='right',...props }:SheetCon
     {...props}>
   
     <div
-      className={cn(
-        "max-h-screen w-[300px] bg-white dark:bg-black absolute p-2 rounded-md shadow-md border border-zinc-600/20 ",
-        className,
-        sides[side]
-      )}
-       onClick={(e) => e.stopPropagation()}
-    >
+        onClick={(e) => e.stopPropagation()}
+        className={cn(`absolute p-2 h-[100dvh] max-h-[100dvh]   bg-white dark:bg-black
+          shadow-md border border-zinc-600/20 flex flex-col`,
+          sides[side],
+          className
+        )}
+        {...props}
+      >
       {children}
     </div>
   </div>
@@ -117,7 +124,7 @@ export const SheetContent=({children,className, side='right',...props }:SheetCon
 export const SheetHeader=({children,className,...props}:SheetHeaderProps)=>{
   const ctx=useContext(SheetContext)
   return(
-    <div className={cn('flex items-center justify-between',className)}{...props} >
+    <div className={cn('flex items-center justify-between ',className)}{...props} >
       {children}
     <div 
     onClick={()=>ctx?.setOpen(false)}
@@ -136,7 +143,7 @@ export const SheetTitle=({children,className,...props}:SheetTitleProps)=>{
 
 export const SheetDescription=({children,className,...props}:SheetDescriptionProps)=>{
   return(
-    <div className={cn('py-4',className)}{...props} >
+    <div className={cn('text-sm text-zinc-500 mt-3',className)}{...props} >
      {children}
     </div>
   )
@@ -144,8 +151,30 @@ export const SheetDescription=({children,className,...props}:SheetDescriptionPro
 
 export const SheetFooter=({children,className,...props}:SheetFooterProps)=>{
   return(
-    <div className={cn('absolute bottom-0 right-0 p-3',className)}{...props} >
+    <div className={cn('mt-auto flex flex-col gap-2 w-full bg-white dark:bg-black',className)}{...props} >
      {children}
     </div>
   )
 }
+
+export const SheetClose = ({ children, asChild }: SheetCloseProps) => {
+  const ctx = useContext(SheetContext)
+  if (!ctx) throw new Error("SheetClose must be used within Sheet")
+
+  const handleClose = () => {
+    ctx.setOpen(false)
+  }
+
+  if (asChild) {
+    return React.cloneElement(children, {
+      onClick: handleClose
+    })
+  }
+
+  return (
+    <button onClick={handleClose}>
+      {children}
+    </button>
+  )
+}
+

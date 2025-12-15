@@ -10,7 +10,7 @@ interface InputProps extends Omit<React.InputHTMLAttributes<HTMLInputElement>, '
     id?:string;
     className?:string;
     variant?:'outlined' |'elevated' |'filled'
-    size?:'sm'| 'md' | 'lg'
+    size?:'sm'| 'md' | 'lg'|'full'
 }
 
 export const Input=({
@@ -38,7 +38,8 @@ export const Input=({
     const sizes:Record<string,string>={
         sm:"w-full max-w-[150px] py-2 px-1 ",
         md:"w-full max-w-[180px] py-2 px-1",
-        lg:"w-full max-w-[210px] px-1 py-2  "
+        lg:"w-full max-w-[210px] px-1 py-2 ",
+        full:"w-full px-1 py-2"
     }
    return(
     <input 

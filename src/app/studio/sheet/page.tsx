@@ -33,7 +33,7 @@ const SheetPage=()=>{
         <div  className="absolute top-0 right-0 m-2  opacity-0 group-hover:opacity-100 transition-opacity  text-zinc-800 dark:text-white px-2  rounded-md cursor-pointer"><Code className="w-4 h-4" /></div>
         <Sheet>
           <SheetTrigger>Open sheet</SheetTrigger>
-          <SheetContent  side="top" >
+          <SheetContent  side="bottom" >
                 
           <SheetHeader>
           <SheetTitle>Edit Profile</SheetTitle>
@@ -41,7 +41,7 @@ const SheetPage=()=>{
           <SheetDescription>
             Make changes to your profile here. Click save when you&apos;re done.
           </SheetDescription>
-          <div className="grid flex-1 auto-rows-min gap-4 mt-3 ">
+          <div className="grid auto-rows-min gap-4 md:mt-3 ">
           <div className="grid gap-3  ">
             <label className="dark:text-zinc-200 text-zinc-800 text-sm " htmlFor="sheet-demo-name">Name</label>
             <Input size="full" id="sheet-demo-name" defaultValue="Ethan Caldwell" />

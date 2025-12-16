@@ -1,30 +1,53 @@
-import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import {vscDarkPlus,vs } from "react-syntax-highlighter/dist/esm/styles/prism";
-import { useTheme } from "next-themes";
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter"
+import { oneDark, oneLight } from "react-syntax-highlighter/dist/esm/styles/prism"
+import { useTheme } from "next-themes"
 
-interface CodeBlockProps{
-  children:string;
- 
+interface CodeBlockProps {
+  children: string
+  className?: string
 }
 
+const CodeBlock = ({ children, className }: CodeBlockProps) => {
+  const { theme } = useTheme()
+  const isDark = theme === "dark"
 
- export  const CodeBlock = ({ children}: CodeBlockProps) => {
-     const { theme } = useTheme();
-  const isDark = theme === "dark";
-    
   return (
-    <SyntaxHighlighter
-      language="tsx"
-      style={isDark ? vscDarkPlus : vs  } 
-      showLineNumbers
-      wrapLines
-      lineNumberStyle={{
-        color: isDark ? "#6b7280" : "#9ca3af",
-      }}
-    >
-      {children}
-    </SyntaxHighlighter>
-  );
-};
+    <div className={className}>
+      <SyntaxHighlighter
+        language="tsx"
+        style={isDark ? oneDark : oneLight}
+        showLineNumbers
+        wrapLines
+        customStyle={{
+          margin: 0,
+          padding: "16px",
+          borderRadius: "12px",
+          maxWidth: "100%",
+          overflowX: "auto",
+          overflowY: "hidden",
+          backgroundColor: isDark ? "#0A0A0A" : "#ffffff",
+          color: isDark ? "#e5e7eb" : "#111827",
+          fontSize: "14px",
+          lineHeight: "1.6",
+        }}
+        lineNumberStyle={{
+          minWidth: "2.5em",
+          paddingRight: "12px",
+          textAlign: "right",
+          userSelect: "none",
+          color: isDark ? "#6b7280" : "#9ca3af",
+        }}
+        codeTagProps={{
+          style: {
+            fontFamily:
+              "JetBrains Mono, Fira Code, Menlo, Monaco, Consolas, monospace",
+          },
+        }}
+      >
+        {children}
+      </SyntaxHighlighter>
+    </div>
+  )
+}
 
-export default CodeBlock;
+export default CodeBlock

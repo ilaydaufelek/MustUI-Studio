@@ -1,7 +1,7 @@
 'use client'
 import { ThemeToggle } from "@/components/theme-toggle"
 import { Input } from "@/library/components/input"
-import { Sheet, SheetClose, SheetContent, SheetDescription, SheetFooter, SheetHeader, SheetTitle, SheetTrigger } from "@/library/components/sheet"
+import { Sheet, SheetClose, SheetContent, SheetDescription, SheetFooter, SheetHeader, SheetTitle, SheetTrigger} from '@/library/components/sheet'
 
 import { Code, Github } from "lucide-react"
 import { Button } from "must-ui"
@@ -33,7 +33,7 @@ const SheetPage=()=>{
         <div  className="absolute top-0 right-0 m-2  opacity-0 group-hover:opacity-100 transition-opacity  text-zinc-800 dark:text-white px-2  rounded-md cursor-pointer"><Code className="w-4 h-4" /></div>
         <Sheet>
           <SheetTrigger>Open sheet</SheetTrigger>
-          <SheetContent  side="left" >
+          <SheetContent  side="top" >
                 
           <SheetHeader>
           <SheetTitle>Edit Profile</SheetTitle>

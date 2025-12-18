@@ -11,6 +11,8 @@ const CodeBlock = ({ children, className }: CodeBlockProps) => {
   const { theme } = useTheme()
   const isDark = theme === "dark"
 
+  const lines = children.split("\n")
+
   return (
     <div className={className}>
       <SyntaxHighlighter
@@ -18,6 +20,22 @@ const CodeBlock = ({ children, className }: CodeBlockProps) => {
         style={isDark ? oneDark : oneLight}
         showLineNumbers
         wrapLines
+       lineProps={(lineNumber)=>{
+       const line=lines[lineNumber-1]
+        if (line?.includes("multiple")) {
+            return {
+              style: {
+                backgroundColor: isDark
+                  ? "rgba(59,130,246,0.15)"
+                  : "rgba(59,130,246,0.1)",
+                borderLeft: "3px solid #3b82f6",
+                paddingLeft: "12px",
+              },
+            }
+          }
+
+          return {}
+       }}
         customStyle={{
           margin: 0,
           padding: "16px",

@@ -234,16 +234,14 @@ const SheetPage=()=>{
        <div className="mt-3 md:mt-6 ">
       <p className="text-2xl font-semibold" >Usage</p>
        </div>
-       <div className="space-x-3" >
-          <button onClick={()=>setActiveSheet('preview')} className={`font-semibold mt-4 ${activeSheet==='preview' ? ' text-zinc-800 dark:text-zinc-100' : ' text-zinc-400 dark:text-zinc-500'} `} >Preview</button>
-          <button onClick={()=>setActiveSheet('code')}className={`font-semibold mt-4 ${activeSheet==='code' ? ' text-zinc-800 dark:text-zinc-100' : ' text-zinc-400 dark:text-zinc-500'} `} >Code</button>
+       <div className="space-x-3 mt-1 " >
+          <button onClick={()=>setActiveSheet('preview')} className={`font-semibold  ${activeSheet==='preview' ? ' text-zinc-800 dark:text-zinc-100' : ' text-zinc-400 dark:text-zinc-500'} `} >Preview</button>
+          <button onClick={()=>setActiveSheet('code')}className={`font-semibold  ${activeSheet==='code' ? ' text-zinc-800 dark:text-zinc-100' : ' text-zinc-400 dark:text-zinc-500'} `} >Code</button>
           </div>
        <div className="relative" >
         <div className="  border border-zinc-600/15 rounded-md flex items-center justify-center h-[360px] overflow-hidden">
          {activeSheet==='preview' && (
-          <div className="" >
-      
-             <Sheet>
+         <Sheet>
           <SheetTrigger>Open left</SheetTrigger>
           <SheetContent  side="left" >
                 
@@ -271,7 +269,7 @@ const SheetPage=()=>{
         </SheetFooter>
         </SheetContent>
         </Sheet>
-          </div>
+        
          )}
 
            {activeSheet==='code' && (
@@ -334,11 +332,11 @@ const SheetPage=()=>{
        </div>
 
 
-        <div className=" mt-3 md:mt-6">
+        <div className=" mt-3 md:mt-6  ">
           <p className="text-2xl font-semibold" >Side sheets</p>
-          <div className="space-x-3" >
-            <button onClick={()=>setActive('preview')} className={`font-semibold mt-4 ${active==='preview' ? ' text-zinc-800 dark:text-zinc-100' : ' text-zinc-400 dark:text-zinc-500'} `} >Preview</button>
-          <button onClick={()=>setActive('code')}className={`font-semibold mt-4 ${active==='code' ? ' text-zinc-800 dark:text-zinc-100' : ' text-zinc-400 dark:text-zinc-500'} `} >Code</button>
+          <div className="space-x-3 mt-4 " >
+            <button onClick={()=>setActive('preview')} className={`font-semibold  ${active==='preview' ? ' text-zinc-800 dark:text-zinc-100' : ' text-zinc-400 dark:text-zinc-500'} `} >Preview</button>
+          <button onClick={()=>setActive('code')}className={`font-semibold  ${active==='code' ? ' text-zinc-800 dark:text-zinc-100' : ' text-zinc-400 dark:text-zinc-500'} `} >Code</button>
           </div>
         </div>
         <div className="relative" >

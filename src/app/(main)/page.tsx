@@ -2,7 +2,7 @@
 import { ThemeToggle } from "@/components/theme-toggle";
 import { RevealImageList } from "@/components/ui/reveal-images";
 import { Github } from "lucide-react";
-import { Button } from "must-ui";
+import { Button } from "must-ui/button";
 import { useRouter } from "next/navigation";
 
 

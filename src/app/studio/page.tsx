@@ -2,8 +2,8 @@
 
 
 import { ThemeToggle } from "@/components/theme-toggle";
-import {Input,Button} from 'must-ui'
-import {  Github } from "lucide-react";
+import {Button} from 'must-ui/button'
+import {Input} from 'must-ui/input'
 import { ModalProvider } from "@/provider/modal-provider";
 import { useModal } from "@/hooks/use-modal-store";
 

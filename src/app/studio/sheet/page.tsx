@@ -6,7 +6,7 @@ import { Input } from "@/library/components/input"
 import { Sheet, SheetClose, SheetContent, SheetDescription, SheetFooter, SheetHeader, SheetTitle, SheetTrigger} from '@/library/components/sheet'
 import { Copy, CopyCheck } from "lucide-react"
 
-import { Button } from "must-ui"
+import { Button } from "must-ui/button"
 import { useState } from "react"
 
 
@@ -19,9 +19,9 @@ const usageSheet=`
           SheetFooter,
           SheetHeader,
           SheetTitle, 
-          SheetTrigger} from 'must-ui'
-          import { Input } from "must-ui"
-          import { Button } from "must-ui"
+          SheetTrigger} from 'must-ui/sheet'
+          import { Input } from "must-ui/input"
+          import { Button } from "must-ui/button"
 
           export const SheetDemo=()=>{
           return(
@@ -64,9 +64,9 @@ const usageSheet=`
           SheetFooter,
           SheetHeader,
           SheetTitle, 
-          SheetTrigger} from 'must-ui'
-          import { Input } from "must-ui"
-          import { Button } from "must-ui"
+          SheetTrigger} from 'must-ui/sheet'
+          import { Input } from "must-ui/input"
+          import { Button } from "must-ui/button"
 
           export const SheetDemo=()=>{
           return(
@@ -288,9 +288,9 @@ const SheetPage=()=>{
           SheetFooter,
           SheetHeader,
           SheetTitle, 
-          SheetTrigger} from 'must-ui'
-          import { Input } from "must-ui"
-          import { Button } from "must-ui"
+          SheetTrigger} from 'must-ui/sheet'
+          import { Input } from "must-ui/input"
+          import { Button } from "must-ui/button"
 
           export const SheetDemo=()=>{
           return(
@@ -476,9 +476,9 @@ const SheetPage=()=>{
           SheetFooter,
           SheetHeader,
           SheetTitle, 
-          SheetTrigger} from 'must-ui'
-          import { Input } from "must-ui"
-          import { Button } from "must-ui"
+          SheetTrigger} from 'must-ui/sheet'
+          import { Input } from "must-ui/input"
+          import { Button } from "must-ui/button"
 
           export const SheetDemo=()=>{
           return(

@@ -6,7 +6,7 @@ import { useRouter } from "next/navigation"
 import { Dialog, DialogCancel, DialogContent, DialogDescription, DialogFooter, DialogSubmit, DialogTitle, DialogTrigger } from "@/library/components/dialog"
 import { ModalProvider } from "@/provider/modal-provider"
 import { CircleAlertIcon, Code, Github } from "lucide-react"
-import { Button } from "must-ui"
+import { Button } from "must-ui/button"
 
 const DialogPage=()=>{
     const{onOpen}=useModal()

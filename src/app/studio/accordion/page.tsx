@@ -1,8 +1,8 @@
 'use client'
 import { ThemeToggle } from "@/components/theme-toggle"
-import { Accordion, AccordionContent, AccordionItem,  AccordionTrigger } from "must-ui"
+import { Accordion, AccordionContent, AccordionItem,  AccordionTrigger } from "must-ui/accordion"
 import {  Code2,  Copy,  CopyCheck,  Gauge, HandHelping, Palette, } from "lucide-react"
-import { Button } from "must-ui"
+import { Button } from "must-ui/button"
 import { Installation } from "@/components/installation"
 import { useState } from "react"
 import CodeBlock from "@/components/code-block"
@@ -43,7 +43,7 @@ const usageCopy=`
   import { Accordion,
    AccordionContent, 
    AccordionItem, 
-   AccordionTrigger } from "must-ui"
+   AccordionTrigger } from "must-ui/accordion"
 
    import { Code2,
    Gauge,
@@ -105,7 +105,7 @@ const multipleCopy=`
   import { Accordion,
    AccordionContent, 
    AccordionItem, 
-   AccordionTrigger } from "must-ui"
+   AccordionTrigger } from "must-ui/accordion"
 
    import { Code2,
    Gauge,
@@ -250,7 +250,7 @@ const AccordionPage=()=>{
   import { Accordion,
    AccordionContent, 
    AccordionItem, 
-   AccordionTrigger } from "must-ui"
+   AccordionTrigger } from "must-ui/accordion"
 
    import { Code2,
    Gauge,
@@ -350,7 +350,7 @@ const AccordionPage=()=>{
   import { Accordion,
    AccordionContent, 
    AccordionItem, 
-   AccordionTrigger } from "must-ui"
+   AccordionTrigger } from "must-ui/accordion"
 
    import { Code2,
    Gauge,

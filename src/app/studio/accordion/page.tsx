@@ -32,7 +32,7 @@ const items = [
   },
   {
     id: "4",
-    icon: HandHelping,
+    icon: HandHelping, 
     title: "Production-ready accessibility",
     content:
       "Accessible by default. Tested with screen readers and strict contrast rules. Inclusivity is not optional here.",

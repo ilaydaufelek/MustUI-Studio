@@ -1,20 +1,76 @@
 'use client'
 import { ThemeToggle } from "@/components/theme-toggle"
-import { ModalProvider } from "@/provider/modal-provider"
-import { Code,  Github, LoaderCircleIcon, PlusIcon } from "lucide-react"
 import { Button } from "@/library/components/button"
-import { useModal } from "@/hooks/use-modal-store"
-import { useRouter } from "next/navigation"
+import { Installation } from "@/components/installation"
+import { useState } from "react"
+import CodeBlock from "@/components/code-block"
+import { Copy, CopyCheck } from "lucide-react"
+
+
+const textUsage=`
+import {Button} from "must-ui/button"
+export const ButtonUsage=()=>{
+ return(
+ <Button size="md" >Button</Button>
+)}
+`
+const textVariants=`
+ import {Button} from "must-ui/button"
+ export const ButtonUsage=()=>{
+ return(
+<Button variant="outline" size="md" >Outline</Button>
+<Button variant="primary" size="md" >Primary</Button>
+<Button variant="secondary" size="md">Primary</Button>
+<Button variant="danger" size="md" >Danger</Button>
+<Button disabled size="md" >Disabled</Button>
+)}
+`
+const textSizes=`
+ import {Button} from "must-ui/button"
+ export const ButtonUsage=()=>{
+ return(
+<Button variant="outline" size="sm" >Small</Button>
+<Button variant="outline" size="md" >Medium</Button>
+<Button variant="outline"  size="lg" >Large</Button>
+<Button variant="outline" size="icon">Icon</Button>
+)}
+`
 
  const ButtonPage=()=>{
-    const {onOpen} =useModal()
-    const router=useRouter()
+   const[usage,setUsage]=useState<'preview' | 'code'>("preview")
+   const[variants,setVariants]=useState<'preview' | 'code'>("preview")
+   const[sizes,setSizes]=useState<'preview' | 'code'>("preview")
+   const[copyUsage,setCopyUsage]=useState(false)
+   const[copyVariants,setCopyVariants]=useState(false)
+   const[copySizes,setCopySizes]=useState(false)
+    
+const onCopyUsage=()=>{
+  navigator.clipboard.writeText(textUsage)
+  setCopyUsage(true)
+  setTimeout(()=>{
+    setCopyUsage(false)
+  },5000)
+}
+
+const onCopyVariants=()=>{
+  navigator.clipboard.writeText(textVariants)
+  setCopyVariants(true)
+  setTimeout(()=>{
+    setCopyVariants(false)
+  },5000)
+}
+
+const onCopySizes=()=>{
+  navigator.clipboard.writeText(textSizes)
+  setCopySizes(true)
+  setTimeout(()=>{
+    setCopySizes(false)
+  },5000)
+}
+
     return(
       <div className="  min-h-screen ">
-  
-  
-         <header className="   w-full  text-black dark:text-white h-[60px] flex items-center justify-end space-x-6 p-2">
-       <p onClick={()=>router.push('')} className="text-sm font-semibold underline cursor-pointer  " >Installation</p>
+    <header className="   w-full  text-black dark:text-white h-[60px] flex items-center justify-end space-x-6 p-2">
         <span className="m-2" ><ThemeToggle/></span>
       </header>
       <div className="  w-full  flex flex-col items-center justify-center mt-12 space-y-6  " >
@@ -30,48 +86,137 @@ import { useRouter } from "next/navigation"
        </div>
      
       <div className="  min-h-screen flex  justify-center  mt-4 md:mt-8 ">
-      <div className="h-full max-w-[1400px] w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-3 p-6  ">
-     
+     <div  className="h-full max-w-[1000px]  w-full  grid grid-cols-1  gap-3 p-6" >
+    <p className="text-2xl font-semibold" >Installation</p>
+    <div className="border border-zinc-600/15 rounded-md p-3 " >
+    <Installation/>
+    </div>
+  
+   <div className="mt-3 md:mt-6 ">
+    <p className="text-2xl font-semibold" >Usage</p>
+    </div>
+    <div className="space-x-3 mt-1 " >
+      <button onClick={()=>setUsage('preview')} className={`font-semibold  ${usage==='preview' ? ' text-zinc-800 dark:text-zinc-100' : ' text-zinc-400 dark:text-zinc-500'} `} >Preview</button>
+      <button onClick={()=>setUsage('code')}className={`font-semibold  ${usage==='code' ? ' text-zinc-800 dark:text-zinc-100' : ' text-zinc-400 dark:text-zinc-500'} `} >Code</button>
+      </div>
+    <div className="relative" >
+      <div className="border  border-zinc-600/15 rounded-md   h-[360px] overflow-hidden" >
+      {usage==='preview' && (
+       <div className="w-full h-full flex justify-center items-center" >
+         <Button size="md" >Button</Button>
+       </div>
+      )}
+      {usage==='code'&&(
+      <div className=" h-full overflow-y-auto no-scrollbar " >
+      <button className="absolute right-0 top-0 m-2 "  onClick={onCopyUsage} >
+       {copyUsage ? <CopyCheck className="w-8 h-8 rounded-md transition-colors hover:bg-zinc-600/20 p-2  " /> : <Copy className="w-8 h-8 rounded-md  transition-colors hover:bg-zinc-600/20 p-2" />}
+      </button>
+        <CodeBlock className="h-full" >
+        {` 
+ import {Button} from "must-ui/button"
+ export const ButtonUsage=()=>{
+ return(
+ <Button size="md" >Button</Button>
+)}
+          
+  `}
+        </CodeBlock>
+      </div>
+      )}
 
-      <div className=" relative group border border-zinc-300 dark:border-zinc-800 rounded-md w-full h-[100px]  transition-all flex items-center justify-center ">
-      <div onClick={()=>onOpen('buttonModal',"default")}  className="absolute top-0 right-0 m-2  opacity-0 group-hover:opacity-100 transition-opacity  text-zinc-800 dark:text-white px-2  rounded-md cursor-pointer"><Code className="w-4 h-4" /></div>
-      <Button  size="md" >Button</Button>
       </div>
-      <div className=" relative border group border-zinc-300 dark:border-zinc-800 rounded-md w-full h-[100px]  transition-all flex items-center justify-center  " >
-      <div onClick={()=>onOpen('buttonModal',"icons")}  className="absolute top-0 right-0 m-2  opacity-0 group-hover:opacity-100 transition-opacity   text-zinc-800 dark:text-white px-2  rounded-md cursor-pointer"><Code className="w-4 h-4" /></div>
-      <Button size="icon" variant="outline" >
-      <PlusIcon size={16} />
-      </Button>
+    </div>
+      <div className="mt-3 md:mt-6 ">
+    <p className="text-2xl font-semibold" >Button Variants</p>
+    </div>
+    <div className="space-x-3 mt-1 " >
+      <button onClick={()=>setVariants('preview')} className={`font-semibold  ${variants==='preview' ? ' text-zinc-800 dark:text-zinc-100' : ' text-zinc-400 dark:text-zinc-500'} `} >Preview</button>
+      <button onClick={()=>setVariants('code')}className={`font-semibold  ${variants==='code' ? ' text-zinc-800 dark:text-zinc-100' : ' text-zinc-400 dark:text-zinc-500'} `} >Code</button>
       </div>
-      <div className=" relative group border border-zinc-300 dark:border-zinc-800 rounded-md  w-full h-[100px] transition-all flex items-center justify-center" >
-      <div onClick={()=>onOpen('buttonModal',"disabled")}  className="absolute top-0 right-0 m-2  opacity-0 group-hover:opacity-100 transition-opacity   text-zinc-800 dark:text-white px-2  rounded-md cursor-pointer"><Code className="w-4 h-4" /></div>
-      <Button disabled >
-       Button
-      </Button>
+    <div className="relative" >
+      <div className="border  border-zinc-600/15 rounded-md   h-[360px] overflow-hidden" >
+      {variants==='preview' && (
+   <div className=" h-full grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 p-6 gap-3 place-items-center">
+  <Button variant="outline" size="md">Outline</Button>
+  <Button variant="primary" size="md">Primary</Button>
+   <Button variant="secondary" size="md">Primary</Button>
+  <Button variant="danger" size="md">Danger</Button>
+  <Button disabled size="md">Disabled</Button>
+</div>
+      )}
+      {variants==='code'&&(
+      <div className=" h-full overflow-y-auto no-scrollbar " >
+      <button className="absolute right-0 top-0 m-2 "  onClick={onCopyVariants} >
+       {copyVariants ? <CopyCheck className="w-8 h-8 rounded-md transition-colors hover:bg-zinc-600/20 p-2  " /> : <Copy className="w-8 h-8 rounded-md  transition-colors hover:bg-zinc-600/20 p-2" />}
+      </button>
+        <CodeBlock className="h-full" >
+        {` 
+ import {Button} from "must-ui/button"
+ export const ButtonUsage=()=>{
+ return(
+<Button variant="outline" size="md" >Outline</Button>
+<Button variant="primary" size="md" >Primary</Button>
+<Button variant="secondary" size="md">Primary</Button>
+<Button variant="danger" size="md" >Danger</Button>
+<Button disabled size="md" >Disabled</Button>
+)}
+          
+  `}
+        </CodeBlock>
       </div>
-      <div className=" relative group border border-zinc-300 dark:border-zinc-800 rounded-md  w-full h-[100px] transition-all flex items-center justify-center" >
-      <div onClick={()=>onOpen('buttonModal',"disabled")}  className="absolute top-0 right-0 m-2  opacity-0 group-hover:opacity-100 transition-opacity   text-zinc-800 dark:text-white px-2  rounded-md cursor-pointer"><Code className="w-4 h-4" /></div>
-      <Button variant="outline" disabled>
-      <LoaderCircleIcon
-        className="-ms-1 mr-1  animate-spin"
-        size={16}
-        aria-hidden="true"
-      />
-      Button
-    </Button>
+      )}
+
       </div>
-      
+    </div>
        
        
+        <div className="mt-3 md:mt-6 ">
+    <p className="text-2xl font-semibold" >Button Sizes</p>
+    </div>
+    <div className="space-x-3 mt-1 " >
+      <button onClick={()=>setSizes('preview')} className={`font-semibold  ${sizes==='preview' ? ' text-zinc-800 dark:text-zinc-100' : ' text-zinc-400 dark:text-zinc-500'} `} >Preview</button>
+      <button onClick={()=>setSizes('code')}className={`font-semibold  ${sizes==='code' ? ' text-zinc-800 dark:text-zinc-100' : ' text-zinc-400 dark:text-zinc-500'} `} >Code</button>
+      </div>
+    <div className="relative" >
+      <div className="border  border-zinc-600/15 rounded-md   h-[360px] overflow-hidden mb-4" >
+      {sizes==='preview' && (
+       <div className=" h-full grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 p-6 gap-3 place-items-center">
+        <Button variant="outline" size="sm" >Small</Button>
+        <Button variant="outline" size="md" >Medium</Button>
+        <Button variant="outline"  size="lg" >Large</Button>
+        <Button variant="outline" size="icon" >Icon</Button>
+       </div>
+      )}
+      {sizes==='code'&&(
+      <div className=" h-full overflow-y-auto no-scrollbar " >
+      <button className="absolute right-0 top-0 m-2 "  onClick={onCopySizes} >
+       {copySizes ? <CopyCheck className="w-8 h-8 rounded-md transition-colors hover:bg-zinc-600/20 p-2  " /> : <Copy className="w-8 h-8 rounded-md  transition-colors hover:bg-zinc-600/20 p-2" />}
+      </button>
+        <CodeBlock className="h-full" >
+        {` 
+ import {Button} from "must-ui/button"
+ export const ButtonUsage=()=>{
+ return(
+<Button variant="outline" size="sm" >Small</Button>
+<Button variant="outline" size="md" >Medium</Button>
+<Button variant="outline"  size="lg" >Large</Button>
+<Button variant="outline" size="icon">Icon</Button>
+)}
+          
+  `}
+        </CodeBlock>
+      </div>
+      )}
+
+      </div>
+    </div> 
          
           
       
       </div>
      
    </div>
-      <ModalProvider/>
-   
-    </div>
+   </div>
     )
 }
 

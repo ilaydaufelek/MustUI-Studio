@@ -2,7 +2,7 @@
 import { ThemeToggle } from "@/components/theme-toggle"
 import { Textarea } from "@/library/components/textarea"
 import { Code, Github } from "lucide-react"
-import { Button } from "must-ui"
+import { Button } from "must-ui/button"
 import { useRouter } from "next/navigation"
 
 const TextareaPage=()=>{

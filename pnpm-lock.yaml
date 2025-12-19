@@ -18,8 +18,8 @@ importers:
         specifier: ^0.544.0
         version: 0.544.0(react@19.1.0)
       must-ui:
-        specifier: ^2.0.2
-        version: 2.0.2(react@19.1.0)
+        specifier: ^2.1.3
+        version: 2.1.3(react@19.1.0)
       next:
         specifier: 16.0.8
         version: 16.0.8(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
@@ -1529,8 +1529,8 @@ packages:
   ms@2.1.3:
     resolution: {integrity: sha512-6FlzubTLZG3J2a/NVCAleEhjzq5oxgHyaCU9yYXvcLsvoVaHJq/s5xXI6/XXP6tz7R9xAOtHnSO/tXtF3WRTlA==}
 
-  must-ui@2.0.2:
-    resolution: {integrity: sha512-vaPT5UMCnnw2SXCcuOXE+KW4Ni5iLzGohkURMFVomXiwRpOhfHHLjFDX7GEvWzpreO6XeL+xk2Ja1rGKUJpnMA==}
+  must-ui@2.1.3:
+    resolution: {integrity: sha512-yBSdQFI9VT40rB3x+ujEgX8z5EVpHL+cD//N7EN4urpmgGvlrJKksmI3Ih7uNYhFl1WVupvgkHyhmDj8FxIOGQ==}
     peerDependencies:
       react: '>=18'
 
@@ -3531,7 +3531,7 @@ snapshots:
 
   ms@2.1.3: {}
 
-  must-ui@2.0.2(react@19.1.0):
+  must-ui@2.1.3(react@19.1.0):
     dependencies:
       clsx: 2.1.1
       lucide-react: 0.555.0(react@19.1.0)

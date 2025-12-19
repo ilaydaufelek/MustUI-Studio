@@ -196,7 +196,7 @@ const AccordionPage=()=>{
       </header>
       <div className="  w-full  flex flex-col items-center justify-center mt-12 space-y-6  " >
         <div className="  text-5xl md:text-7xl  font-bold text-center   " >
-       Accordions
+       Accordion
         </div>
         <p className=" text-center text-lg text-zinc-400 dark:text-zinc-300 text-md md:text-lg  max-w-3xl  leading-relaxed font-semibold  " >
        A collection of unique accordion components built with React and Tailwind CSS, designed for modern projects.

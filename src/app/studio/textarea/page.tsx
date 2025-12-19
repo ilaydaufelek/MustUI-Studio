@@ -101,7 +101,7 @@ const onCopyVariants=()=>{
       {`
  import { Textarea } from "must-ui/textarea"  
  
- export const Textarea=()=>{
+ export const TextareaUsage=()=>{
  return(
  <Textarea/>
  )
@@ -143,7 +143,7 @@ const onCopyVariants=()=>{
       {`
  import { Textarea } from "must-ui/textarea"  
  
- export const Textarea=()=>{
+ export const TextareaUsage=()=>{
  return(
  <>
  <Textarea className="focus:ring-blue-300 focus:dark:ring-blue-600/40  focus:border-blue-500 dark:focus:border-blue-700 " />

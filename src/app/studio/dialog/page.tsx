@@ -129,9 +129,10 @@ const DialogPage=()=>{
       <button onClick={()=>setUsage('code')}className={`font-semibold  ${usage==='code' ? ' text-zinc-800 dark:text-zinc-100' : ' text-zinc-400 dark:text-zinc-500'} `} >Code</button>
       </div>  
       <div className="relative" >
-       <div className="border  border-zinc-600/15 rounded-md flex items-center justify-center h-[360px] overflow-hidden" >
+       <div className="border  border-zinc-600/15 rounded-md  h-[360px] overflow-hidden" >
        {usage==='preview' &&(
-        <Dialog>
+    <div className="h-full flex items-center justify-center " >
+          <Dialog>
       <DialogTrigger>
       Open Dialog
       </DialogTrigger>
@@ -146,6 +147,7 @@ const DialogPage=()=>{
       </DialogFooter>
       </DialogContent>
       </Dialog>
+  </div>
        )}
       {usage==='code' && (
      <div className=" h-full overflow-y-auto no-scrollbar" >
@@ -193,9 +195,10 @@ Take a moment to review the details provided to ensure you understand the implic
       <button onClick={()=>setDialogI('code')}className={`font-semibold  ${dialogI==='code' ? ' text-zinc-800 dark:text-zinc-100' : ' text-zinc-400 dark:text-zinc-500'} `} >Code</button>
       </div>
       <div className="relative" >
-       <div className="border  border-zinc-600/15 rounded-md flex items-center justify-center h-[360px] overflow-hidden mt-3 mb-4 " >
+       <div className="border  border-zinc-600/15 rounded-md  h-[360px] overflow-hidden mt-3 mb-4 " >
        {dialogI==='preview' && (
-         <Dialog>
+      <div className="h-full flex items-center justify-center " >
+           <Dialog>
       <DialogTrigger>
       Open Dialog with icon
       </DialogTrigger>
@@ -215,6 +218,7 @@ Take a moment to review the details provided to ensure you understand the implic
       </DialogFooter>
       </DialogContent>
       </Dialog>
+      </div>
 
        )}
        {dialogI==='code' &&(

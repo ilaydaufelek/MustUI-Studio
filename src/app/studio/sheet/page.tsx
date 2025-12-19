@@ -11,179 +11,180 @@ import { useState } from "react"
 
 
 const usageSheet=`
-        import { 
-          Sheet, 
-          SheetClose,
-          SheetContent,
-          SheetDescription,
-          SheetFooter,
-          SheetHeader,
-          SheetTitle, 
-          SheetTrigger} from 'must-ui/sheet'
-          import { Input } from "must-ui/input"
-          import { Button } from "must-ui/button"
+import { 
+Sheet, 
+SheetClose,
+SheetContent,
+SheetDescription,
+SheetFooter,
+SheetHeader,
+SheetTitle, 
+SheetTrigger} from 'must-ui/sheet'
+import { Input } from "must-ui/input"
+import { Button } from "must-ui/button"
 
-          export const SheetDemo=()=>{
-          return(
-          <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4  gap-3" >
-          <Sheet>
-          <SheetTrigger>Open left</SheetTrigger>
-          <SheetContent  side="left" >
-          <SheetHeader>
-          <SheetTitle>Edit Profile</SheetTitle>
-          </SheetHeader>
-          <SheetDescription>
-            Make changes to your profile here. Click save when you&apos;re done.
-          </SheetDescription>
-          <div className="grid auto-rows-min gap-4 md:mt-3 ">
-          <div className="grid gap-3  ">
-            <label className="dark:text-zinc-200 text-zinc-800 text-sm " htmlFor="sheet-demo-name">Name</label>
-            <Input size="full" id="sheet-demo-name" defaultValue="Ethan Caldwell" />
-          </div>
-          <div className="grid gap-3">
-            <label className="dark:text-zinc-200 text-zinc-800 text-sm " htmlFor="sheet-demo-username">Username</label>
-            <Input size="full" id="sheet-demo-username" defaultValue="@ethan.caldwell" />
-          </div>
-        </div>
-        <SheetFooter>
-        <SheetClose asChild >
-          <Button>Cancel</Button>
-        </SheetClose>
-        <Button>Accept</Button>
-        </SheetFooter>
-        </SheetContent>
-        </Sheet>
-        </div>`
+export const SheetDemo=()=>{
+return(
+<div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4  gap-3" >
+<Sheet>
+<SheetTrigger>Open left</SheetTrigger>
+<SheetContent  side="left" >
+<SheetHeader>
+<SheetTitle>Edit Profile</SheetTitle>
+</SheetHeader>
+<SheetDescription>
+Make changes to your profile here. Click save when you&apos;re done.
+</SheetDescription>
+<div className="grid auto-rows-min gap-4 md:mt-3 ">
+<div className="grid gap-3  ">
+<label className="dark:text-zinc-200 text-zinc-800 text-sm " htmlFor="sheet-demo-name">Name</label>
+<Input size="full" id="sheet-demo-name" defaultValue="Ethan Caldwell" />
+</div>
+<div className="grid gap-3">
+<label className="dark:text-zinc-200 text-zinc-800 text-sm " htmlFor="sheet-demo-username">Username</label>
+<Input size="full" id="sheet-demo-username" defaultValue="@ethan.caldwell" />
+</div>
+</div>
+<SheetFooter>
+<SheetClose asChild >
+<Button>Cancel</Button>
+</SheetClose>
+<Button>Accept</Button>
+</SheetFooter>
+</SheetContent>
+</Sheet>
+</div>
+)}`
 
-        const usageSheetSide=`
-          import { 
-          Sheet, 
-          SheetClose,
-          SheetContent,
-          SheetDescription,
-          SheetFooter,
-          SheetHeader,
-          SheetTitle, 
-          SheetTrigger} from 'must-ui/sheet'
-          import { Input } from "must-ui/input"
-          import { Button } from "must-ui/button"
+const usageSheetSide=`
+import { 
+Sheet, 
+SheetClose,
+SheetContent,
+SheetDescription,
+SheetFooter,
+SheetHeader,
+SheetTitle, 
+SheetTrigger} from 'must-ui/sheet'
+import { Input } from "must-ui/input"
+import { Button } from "must-ui/button"
 
-          export const SheetDemo=()=>{
-          return(
-           <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4  gap-3" >
-          <Sheet>
-          <SheetTrigger>Open left</SheetTrigger>
-          <SheetContent  side="left" >
-          <SheetHeader>
-          <SheetTitle>Edit Profile</SheetTitle>
-          </SheetHeader>
-          <SheetDescription>
-            Make changes to your profile here. Click save when you&apos;re done.
-          </SheetDescription>
-          <div className="grid auto-rows-min gap-4 md:mt-3 ">
-          <div className="grid gap-3  ">
-            <label className="dark:text-zinc-200 text-zinc-800 text-sm " htmlFor="sheet-demo-name">Name</label>
-            <Input size="full" id="sheet-demo-name" defaultValue="Ethan Caldwell" />
-          </div>
-          <div className="grid gap-3">
-            <label className="dark:text-zinc-200 text-zinc-800 text-sm " htmlFor="sheet-demo-username">Username</label>
-            <Input size="full" id="sheet-demo-username" defaultValue="@ethan.caldwell" />
-          </div>
-        </div>
-        <SheetFooter>
-        <SheetClose asChild >
-          <Button>Cancel</Button>
-        </SheetClose>
-        <Button>Accept</Button>
-        </SheetFooter>
-        </SheetContent>
-        </Sheet>
+export const SheetDemo=()=>{
+return(
+<div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4  gap-3" >
+<Sheet>
+<SheetTrigger>Open left</SheetTrigger>
+<SheetContent side="left" >
+<SheetHeader>
+<SheetTitle>Edit Profile</SheetTitle>
+</SheetHeader>
+<SheetDescription>
+Make changes to your profile here. Click save when you&apos;re done.
+</SheetDescription>
+<div className="grid auto-rows-min gap-4 md:mt-3 ">
+<div className="grid gap-3">
+<label className="dark:text-zinc-200 text-zinc-800 text-sm " htmlFor="sheet-demo-name">Name</label>
+<Input size="full" id="sheet-demo-name" defaultValue="Ethan Caldwell" />
+</div>
+<div className="grid gap-3">
+ <label className="dark:text-zinc-200 text-zinc-800 text-sm " htmlFor="sheet-demo-username">Username</label>
+ <Input size="full" id="sheet-demo-username" defaultValue="@ethan.caldwell" />
+</div>
+</div>
+<SheetFooter>
+<SheetClose asChild >
+<Button>Cancel</Button>
+</SheetClose>
+<Button>Accept</Button>
+</SheetFooter>
+</SheetContent>
+</Sheet>
 
-         <Sheet>
-          <SheetTrigger>Open right</SheetTrigger>
-          <SheetContent  side="right" >
-          <SheetHeader>
-          <SheetTitle>Edit Profile</SheetTitle>
-          </SheetHeader>
-          <SheetDescription>
-            Make changes to your profile here. Click save when you&apos;re done.
-          </SheetDescription>
-          <div className="grid auto-rows-min gap-4 md:mt-3 ">
-          <div className="grid gap-3  ">
-            <label className="dark:text-zinc-200 text-zinc-800 text-sm " htmlFor="sheet-demo-name">Name</label>
-            <Input size="full" id="sheet-demo-name" defaultValue="Ethan Caldwell" />
-          </div>
-          <div className="grid gap-3">
-            <label className="dark:text-zinc-200 text-zinc-800 text-sm " htmlFor="sheet-demo-username">Username</label>
-            <Input size="full" id="sheet-demo-username" defaultValue="@ethan.caldwell" />
-          </div>
-        </div>
-        <SheetFooter>
-        <SheetClose asChild >
-          <Button>Cancel</Button>
-        </SheetClose>
-        <Button>Accept</Button>
-        </SheetFooter>
-        </SheetContent>
-        </Sheet>
+<Sheet>
+<SheetTrigger>Open right</SheetTrigger>
+<SheetContent  side="right" >
+<SheetHeader>
+<SheetTitle>Edit Profile</SheetTitle>
+</SheetHeader>
+<SheetDescription>
+Make changes to your profile here. Click save when you&apos;re done.
+ </SheetDescription>
+ <div className="grid auto-rows-min gap-4 md:mt-3 ">
+ <div className="grid gap-3  ">
+<label className="dark:text-zinc-200 text-zinc-800 text-sm " htmlFor="sheet-demo-name">Name</label>
+<Input size="full" id="sheet-demo-name" defaultValue="Ethan Caldwell" />
+ </div>
+ <div className="grid gap-3">
+<label className="dark:text-zinc-200 text-zinc-800 text-sm " htmlFor="sheet-demo-username">Username</label>
+<Input size="full" id="sheet-demo-username" defaultValue="@ethan.caldwell" />
+ </div>
+</div>
+<SheetFooter>
+<SheetClose asChild >
+<Button>Cancel</Button>
+</SheetClose>
+<Button>Accept</Button>
+</SheetFooter>
+</SheetContent>
+</Sheet>
 
-         <Sheet>
-          <SheetTrigger>Open top</SheetTrigger>
-          <SheetContent  side="top" >
-          <SheetHeader>
-          <SheetTitle>Edit Profile</SheetTitle>
-          </SheetHeader>
-          <SheetDescription>
-            Make changes to your profile here. Click save when you&apos;re done.
-          </SheetDescription>
-          <div className="grid auto-rows-min gap-4 md:mt-3 ">
-          <div className="grid gap-3  ">
-            <label className="dark:text-zinc-200 text-zinc-800 text-sm " htmlFor="sheet-demo-name">Name</label>
-            <Input size="full" id="sheet-demo-name" defaultValue="Ethan Caldwell" />
-          </div>
-          <div className="grid gap-3">
-            <label className="dark:text-zinc-200 text-zinc-800 text-sm " htmlFor="sheet-demo-username">Username</label>
-            <Input size="full" id="sheet-demo-username" defaultValue="@ethan.caldwell" />
-          </div>
-        </div>
-        <SheetFooter>
-        <SheetClose asChild >
-          <Button>Cancel</Button>
-        </SheetClose>
-        <Button>Accept</Button>
-        </SheetFooter>
-        </SheetContent>
-        </Sheet>
+<Sheet>
+<SheetTrigger>Open top</SheetTrigger>
+<SheetContent  side="top" >
+<SheetHeader>
+<SheetTitle>Edit Profile</SheetTitle>
+</SheetHeader>
+<SheetDescription>
+Make changes to your profile here. Click save when you&apos;re done.
+</SheetDescription>
+<div className="grid auto-rows-min gap-4 md:mt-3 ">
+<div className="grid gap-3  ">
+<label className="dark:text-zinc-200 text-zinc-800 text-sm " htmlFor="sheet-demo-name">Name</label>
+<Input size="full" id="sheet-demo-name" defaultValue="Ethan Caldwell" />
+</div>
+<div className="grid gap-3">
+<label className="dark:text-zinc-200 text-zinc-800 text-sm " htmlFor="sheet-demo-username">Username</label>
+<Input size="full" id="sheet-demo-username" defaultValue="@ethan.caldwell" />
+</div>
+</div>
+<SheetFooter>
+<SheetClose asChild >
+<Button>Cancel</Button>
+</SheetClose>
+<Button>Accept</Button>
+</SheetFooter>
+</SheetContent>
+</Sheet>
 
-         <Sheet>
-          <SheetTrigger>Open bottom</SheetTrigger>
-          <SheetContent  side="bottom" >
-          <SheetHeader>
-          <SheetTitle>Edit Profile</SheetTitle>
-          </SheetHeader>
-          <SheetDescription>
-            Make changes to your profile here. Click save when you&apos;re done.
-          </SheetDescription>
-          <div className="grid auto-rows-min gap-4 md:mt-3 ">
-          <div className="grid gap-3  ">
-            <label className="dark:text-zinc-200 text-zinc-800 text-sm " htmlFor="sheet-demo-name">Name</label>
-            <Input size="full" id="sheet-demo-name" defaultValue="Ethan Caldwell" />
-          </div>
-          <div className="grid gap-3">
-            <label className="dark:text-zinc-200 text-zinc-800 text-sm " htmlFor="sheet-demo-username">Username</label>
-            <Input size="full" id="sheet-demo-username" defaultValue="@ethan.caldwell" />
-          </div>
-        </div>
-        <SheetFooter>
-        <SheetClose asChild >
-          <Button>Cancel</Button>
-        </SheetClose>
-        <Button>Accept</Button>
-        </SheetFooter>
-        </SheetContent>
-        </Sheet>
-        </div>
-        )}
+<Sheet>
+<SheetTrigger>Open bottom</SheetTrigger>
+<SheetContent  side="bottom" >
+<SheetHeader>
+<SheetTitle>Edit Profile</SheetTitle>
+</SheetHeader>
+<SheetDescription>
+Make changes to your profile here. Click save when you&apos;re done.
+</SheetDescription>
+<div className="grid auto-rows-min gap-4 md:mt-3 ">
+<div className="grid gap-3  ">
+<label className="dark:text-zinc-200 text-zinc-800 text-sm " htmlFor="sheet-demo-name">Name</label>
+<Input size="full" id="sheet-demo-name" defaultValue="Ethan Caldwell" />
+</div>
+<div className="grid gap-3">
+<label className="dark:text-zinc-200 text-zinc-800 text-sm " htmlFor="sheet-demo-username">Username</label>
+<Input size="full" id="sheet-demo-username" defaultValue="@ethan.caldwell" />
+</div>
+</div>
+<SheetFooter>
+<SheetClose asChild >
+<Button>Cancel</Button>
+</SheetClose>
+<Button>Accept</Button>
+</SheetFooter>
+</SheetContent>
+</Sheet>
+</div>
+)}
         `
 
 const SheetPage=()=>{
@@ -219,14 +220,14 @@ const SheetPage=()=>{
         <p className=" text-center text-lg text-zinc-400 dark:text-zinc-300 text-md md:text-lg  max-w-3xl  leading-relaxed font-semibold  " >
        A collection of unique accordion components built with React and Tailwind CSS, designed for modern projects.
         </p>
-         <Button className="" onClick={() =>
+     <Button className="" onClick={() =>
       window.open('https://github.com/ilaydaufelek/MustUI', '_blank', 'noopener,noreferrer')
   } > Got to GitHub</Button>
        </div>
 
        <div  className="min-h-screen flex  justify-center  mt-4 md:mt-8 " >
         <div  className="h-full max-w-[1000px]  w-full  grid grid-cols-1  gap-3 p-6  " >
-          <p className="text-2xl font-semibold" >Installation</p>
+     <p className="text-2xl font-semibold" >Installation</p>
         <div className="border border-zinc-600/15 rounded-md p-3 " >
           <Installation/>
         </div>
@@ -239,9 +240,10 @@ const SheetPage=()=>{
           <button onClick={()=>setActiveSheet('code')}className={`font-semibold  ${activeSheet==='code' ? ' text-zinc-800 dark:text-zinc-100' : ' text-zinc-400 dark:text-zinc-500'} `} >Code</button>
           </div>
        <div className="relative" >
-        <div className="  border border-zinc-600/15 rounded-md flex items-center justify-center h-[360px] overflow-hidden">
+        <div className="  border border-zinc-600/15 rounded-md  h-[360px] overflow-hidden">
          {activeSheet==='preview' && (
-         <Sheet>
+       <div className=" h-full flex items-center justify-center " >
+          <Sheet>
           <SheetTrigger>Open left</SheetTrigger>
           <SheetContent  side="left" >
                 
@@ -269,6 +271,7 @@ const SheetPage=()=>{
         </SheetFooter>
         </SheetContent>
         </Sheet>
+       </div>
         
          )}
 
@@ -280,52 +283,52 @@ const SheetPage=()=>{
       </button>
          <CodeBlock className="h-full " >
           {`
-          import { 
-          Sheet, 
-          SheetClose,
-          SheetContent,
-          SheetDescription,
-          SheetFooter,
-          SheetHeader,
-          SheetTitle, 
-          SheetTrigger} from 'must-ui/sheet'
-          import { Input } from "must-ui/input"
-          import { Button } from "must-ui/button"
+import { 
+Sheet, 
+SheetClose,
+SheetContent,
+SheetDescription,
+SheetFooter,
+SheetHeader,
+SheetTitle, 
+SheetTrigger} from 'must-ui/sheet'
+import { Input } from "must-ui/input"
+import { Button } from "must-ui/button"
 
-          export const SheetDemo=()=>{
-          return(
-          <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4  gap-3" >
-          <Sheet>
-          <SheetTrigger>Open left</SheetTrigger>
-          <SheetContent  side="left" >
-          <SheetHeader>
-          <SheetTitle>Edit Profile</SheetTitle>
-          </SheetHeader>
-          <SheetDescription>
-            Make changes to your profile here. Click save when you&apos;re done.
-          </SheetDescription>
-          <div className="grid auto-rows-min gap-4 md:mt-3 ">
-          <div className="grid gap-3  ">
-            <label className="dark:text-zinc-200 text-zinc-800 text-sm " htmlFor="sheet-demo-name">Name</label>
-            <Input size="full" id="sheet-demo-name" defaultValue="Ethan Caldwell" />
-          </div>
-          <div className="grid gap-3">
-            <label className="dark:text-zinc-200 text-zinc-800 text-sm " htmlFor="sheet-demo-username">Username</label>
-            <Input size="full" id="sheet-demo-username" defaultValue="@ethan.caldwell" />
-          </div>
-        </div>
-        <SheetFooter>
-        <SheetClose asChild >
-          <Button>Cancel</Button>
-        </SheetClose>
-        <Button>Accept</Button>
-        </SheetFooter>
-        </SheetContent>
-        </Sheet>
-        </div>
-        )}`}
+export const SheetDemo=()=>{
+return(
+<div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4  gap-3" >
+<Sheet>
+<SheetTrigger>Open left</SheetTrigger>
+<SheetContent  side="left" >
+<SheetHeader>
+<SheetTitle>Edit Profile</SheetTitle>
+</SheetHeader>
+<SheetDescription>
+Make changes to your profile here. Click save when you&apos;re done.
+</SheetDescription>
+<div className="grid auto-rows-min gap-4 md:mt-3 ">
+<div className="grid gap-3  ">
+<label className="dark:text-zinc-200 text-zinc-800 text-sm " htmlFor="sheet-demo-name">Name</label>
+<Input size="full" id="sheet-demo-name" defaultValue="Ethan Caldwell" />
+</div>
+<div className="grid gap-3">
+<label className="dark:text-zinc-200 text-zinc-800 text-sm " htmlFor="sheet-demo-username">Username</label>
+<Input size="full" id="sheet-demo-username" defaultValue="@ethan.caldwell" />
+</div>
+</div>
+<SheetFooter>
+<SheetClose asChild >
+<Button>Cancel</Button>
+</SheetClose>
+<Button>Accept</Button>
+</SheetFooter>
+</SheetContent>
+</Sheet>
+</div>
+)}`}
          </CodeBlock>
-          </div>
+     </div>
          )}
 
        </div>
@@ -340,9 +343,9 @@ const SheetPage=()=>{
           </div>
         </div>
         <div className="relative" >
-          <div className="border border-zinc-600/15 rounded-md flex items-center justify-center h-[360px] overflow-hidden mb-4 " >
+          <div className="border border-zinc-600/15 rounded-md  h-[360px] overflow-hidden mb-4 " >
          {active ==='preview' &&(
-            <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4 p-6 gap-3 " >
+            <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4 p-6 gap-3 items-center h-full  " >
              <Sheet>
           <SheetTrigger>Open left</SheetTrigger>
           <SheetContent  side="left" >
@@ -468,134 +471,134 @@ const SheetPage=()=>{
       </button>
          <CodeBlock className="h-full " >
           {`
-          import { 
-          Sheet, 
-          SheetClose,
-          SheetContent,
-          SheetDescription,
-          SheetFooter,
-          SheetHeader,
-          SheetTitle, 
-          SheetTrigger} from 'must-ui/sheet'
-          import { Input } from "must-ui/input"
-          import { Button } from "must-ui/button"
+import { 
+Sheet, 
+SheetClose,
+SheetContent,
+SheetDescription,
+SheetFooter,
+SheetHeader,
+SheetTitle, 
+SheetTrigger} from 'must-ui/sheet'
+import { Input } from "must-ui/input"
+import { Button } from "must-ui/button"
 
-          export const SheetDemo=()=>{
-          return(
-           <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4  gap-3" >
-          <Sheet>
-          <SheetTrigger>Open left</SheetTrigger>
-          <SheetContent  side="left" >
-          <SheetHeader>
-          <SheetTitle>Edit Profile</SheetTitle>
-          </SheetHeader>
-          <SheetDescription>
-            Make changes to your profile here. Click save when you&apos;re done.
-          </SheetDescription>
-          <div className="grid auto-rows-min gap-4 md:mt-3 ">
-          <div className="grid gap-3  ">
-            <label className="dark:text-zinc-200 text-zinc-800 text-sm " htmlFor="sheet-demo-name">Name</label>
-            <Input size="full" id="sheet-demo-name" defaultValue="Ethan Caldwell" />
-          </div>
-          <div className="grid gap-3">
-            <label className="dark:text-zinc-200 text-zinc-800 text-sm " htmlFor="sheet-demo-username">Username</label>
-            <Input size="full" id="sheet-demo-username" defaultValue="@ethan.caldwell" />
-          </div>
-        </div>
-        <SheetFooter>
-        <SheetClose asChild >
-          <Button>Cancel</Button>
-        </SheetClose>
-        <Button>Accept</Button>
-        </SheetFooter>
-        </SheetContent>
-        </Sheet>
+export const SheetDemo=()=>{
+return(
+<div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4  gap-3" >
+<Sheet>
+<SheetTrigger>Open left</SheetTrigger>
+<SheetContent side="left" >
+<SheetHeader>
+<SheetTitle>Edit Profile</SheetTitle>
+</SheetHeader>
+<SheetDescription>
+Make changes to your profile here. Click save when you&apos;re done.
+</SheetDescription>
+<div className="grid auto-rows-min gap-4 md:mt-3 ">
+<div className="grid gap-3">
+<label className="dark:text-zinc-200 text-zinc-800 text-sm " htmlFor="sheet-demo-name">Name</label>
+<Input size="full" id="sheet-demo-name" defaultValue="Ethan Caldwell" />
+</div>
+<div className="grid gap-3">
+ <label className="dark:text-zinc-200 text-zinc-800 text-sm " htmlFor="sheet-demo-username">Username</label>
+ <Input size="full" id="sheet-demo-username" defaultValue="@ethan.caldwell" />
+</div>
+</div>
+<SheetFooter>
+<SheetClose asChild >
+<Button>Cancel</Button>
+</SheetClose>
+<Button>Accept</Button>
+</SheetFooter>
+</SheetContent>
+</Sheet>
 
-         <Sheet>
-          <SheetTrigger>Open right</SheetTrigger>
-          <SheetContent  side="right" >
-          <SheetHeader>
-          <SheetTitle>Edit Profile</SheetTitle>
-          </SheetHeader>
-          <SheetDescription>
-            Make changes to your profile here. Click save when you&apos;re done.
-          </SheetDescription>
-          <div className="grid auto-rows-min gap-4 md:mt-3 ">
-          <div className="grid gap-3  ">
-            <label className="dark:text-zinc-200 text-zinc-800 text-sm " htmlFor="sheet-demo-name">Name</label>
-            <Input size="full" id="sheet-demo-name" defaultValue="Ethan Caldwell" />
-          </div>
-          <div className="grid gap-3">
-            <label className="dark:text-zinc-200 text-zinc-800 text-sm " htmlFor="sheet-demo-username">Username</label>
-            <Input size="full" id="sheet-demo-username" defaultValue="@ethan.caldwell" />
-          </div>
-        </div>
-        <SheetFooter>
-        <SheetClose asChild >
-          <Button>Cancel</Button>
-        </SheetClose>
-        <Button>Accept</Button>
-        </SheetFooter>
-        </SheetContent>
-        </Sheet>
+<Sheet>
+<SheetTrigger>Open right</SheetTrigger>
+<SheetContent  side="right" >
+<SheetHeader>
+<SheetTitle>Edit Profile</SheetTitle>
+</SheetHeader>
+<SheetDescription>
+Make changes to your profile here. Click save when you&apos;re done.
+ </SheetDescription>
+ <div className="grid auto-rows-min gap-4 md:mt-3 ">
+ <div className="grid gap-3  ">
+<label className="dark:text-zinc-200 text-zinc-800 text-sm " htmlFor="sheet-demo-name">Name</label>
+<Input size="full" id="sheet-demo-name" defaultValue="Ethan Caldwell" />
+ </div>
+ <div className="grid gap-3">
+<label className="dark:text-zinc-200 text-zinc-800 text-sm " htmlFor="sheet-demo-username">Username</label>
+<Input size="full" id="sheet-demo-username" defaultValue="@ethan.caldwell" />
+ </div>
+</div>
+<SheetFooter>
+<SheetClose asChild >
+<Button>Cancel</Button>
+</SheetClose>
+<Button>Accept</Button>
+</SheetFooter>
+</SheetContent>
+</Sheet>
 
-         <Sheet>
-          <SheetTrigger>Open top</SheetTrigger>
-          <SheetContent  side="top" >
-          <SheetHeader>
-          <SheetTitle>Edit Profile</SheetTitle>
-          </SheetHeader>
-          <SheetDescription>
-            Make changes to your profile here. Click save when you&apos;re done.
-          </SheetDescription>
-          <div className="grid auto-rows-min gap-4 md:mt-3 ">
-          <div className="grid gap-3  ">
-            <label className="dark:text-zinc-200 text-zinc-800 text-sm " htmlFor="sheet-demo-name">Name</label>
-            <Input size="full" id="sheet-demo-name" defaultValue="Ethan Caldwell" />
-          </div>
-          <div className="grid gap-3">
-            <label className="dark:text-zinc-200 text-zinc-800 text-sm " htmlFor="sheet-demo-username">Username</label>
-            <Input size="full" id="sheet-demo-username" defaultValue="@ethan.caldwell" />
-          </div>
-        </div>
-        <SheetFooter>
-        <SheetClose asChild >
-          <Button>Cancel</Button>
-        </SheetClose>
-        <Button>Accept</Button>
-        </SheetFooter>
-        </SheetContent>
-        </Sheet>
+<Sheet>
+<SheetTrigger>Open top</SheetTrigger>
+<SheetContent  side="top" >
+<SheetHeader>
+<SheetTitle>Edit Profile</SheetTitle>
+</SheetHeader>
+<SheetDescription>
+Make changes to your profile here. Click save when you&apos;re done.
+</SheetDescription>
+<div className="grid auto-rows-min gap-4 md:mt-3 ">
+<div className="grid gap-3  ">
+<label className="dark:text-zinc-200 text-zinc-800 text-sm " htmlFor="sheet-demo-name">Name</label>
+<Input size="full" id="sheet-demo-name" defaultValue="Ethan Caldwell" />
+</div>
+<div className="grid gap-3">
+<label className="dark:text-zinc-200 text-zinc-800 text-sm " htmlFor="sheet-demo-username">Username</label>
+<Input size="full" id="sheet-demo-username" defaultValue="@ethan.caldwell" />
+</div>
+</div>
+<SheetFooter>
+<SheetClose asChild >
+<Button>Cancel</Button>
+</SheetClose>
+<Button>Accept</Button>
+</SheetFooter>
+</SheetContent>
+</Sheet>
 
-         <Sheet>
-          <SheetTrigger>Open bottom</SheetTrigger>
-          <SheetContent  side="bottom" >
-          <SheetHeader>
-          <SheetTitle>Edit Profile</SheetTitle>
-          </SheetHeader>
-          <SheetDescription>
-            Make changes to your profile here. Click save when you&apos;re done.
-          </SheetDescription>
-          <div className="grid auto-rows-min gap-4 md:mt-3 ">
-          <div className="grid gap-3  ">
-            <label className="dark:text-zinc-200 text-zinc-800 text-sm " htmlFor="sheet-demo-name">Name</label>
-            <Input size="full" id="sheet-demo-name" defaultValue="Ethan Caldwell" />
-          </div>
-          <div className="grid gap-3">
-            <label className="dark:text-zinc-200 text-zinc-800 text-sm " htmlFor="sheet-demo-username">Username</label>
-            <Input size="full" id="sheet-demo-username" defaultValue="@ethan.caldwell" />
-          </div>
-        </div>
-        <SheetFooter>
-        <SheetClose asChild >
-          <Button>Cancel</Button>
-        </SheetClose>
-        <Button>Accept</Button>
-        </SheetFooter>
-        </SheetContent>
-        </Sheet>
-        </div>
-        )}`}
+<Sheet>
+<SheetTrigger>Open bottom</SheetTrigger>
+<SheetContent  side="bottom" >
+<SheetHeader>
+<SheetTitle>Edit Profile</SheetTitle>
+</SheetHeader>
+<SheetDescription>
+Make changes to your profile here. Click save when you&apos;re done.
+</SheetDescription>
+<div className="grid auto-rows-min gap-4 md:mt-3 ">
+<div className="grid gap-3  ">
+<label className="dark:text-zinc-200 text-zinc-800 text-sm " htmlFor="sheet-demo-name">Name</label>
+<Input size="full" id="sheet-demo-name" defaultValue="Ethan Caldwell" />
+</div>
+<div className="grid gap-3">
+<label className="dark:text-zinc-200 text-zinc-800 text-sm " htmlFor="sheet-demo-username">Username</label>
+<Input size="full" id="sheet-demo-username" defaultValue="@ethan.caldwell" />
+</div>
+</div>
+<SheetFooter>
+<SheetClose asChild >
+<Button>Cancel</Button>
+</SheetClose>
+<Button>Accept</Button>
+</SheetFooter>
+</SheetContent>
+</Sheet>
+</div>
+  )}`}
          </CodeBlock>
           </div>
          )}

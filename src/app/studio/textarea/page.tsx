@@ -3,7 +3,7 @@ import CodeBlock from "@/components/code-block"
 import { Installation } from "@/components/installation"
 import { ThemeToggle } from "@/components/theme-toggle"
 import { Textarea } from "@/library/components/textarea"
-import { Code, Copy, CopyCheck, } from "lucide-react"
+import {  Copy, CopyCheck, } from "lucide-react"
 import { Button } from "must-ui/button"
 import { useState } from "react"
 

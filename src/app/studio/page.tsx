@@ -3,9 +3,8 @@
 
 import { ThemeToggle } from "@/components/theme-toggle";
 import {Button} from 'must-ui/button'
-import {Input} from 'must-ui/input'
 import { ModalProvider } from "@/provider/modal-provider";
-import { useModal } from "@/hooks/use-modal-store";
+
 
 import { useRouter } from "next/navigation";
 
@@ -14,7 +13,7 @@ import { useRouter } from "next/navigation";
 
 const StudioPage = () => {
   
-  const{onOpen}= useModal()
+
   const router=useRouter()
 
   return (

@@ -18,21 +18,25 @@ const textVariants=`
  import {Button} from "must-ui/button"
  export const ButtonUsage=()=>{
  return(
+<>
 <Button variant="outline" size="md" >Outline</Button>
 <Button variant="primary" size="md" >Primary</Button>
 <Button variant="secondary" size="md">Primary</Button>
 <Button variant="danger" size="md" >Danger</Button>
-<Button disabled size="md" >Disabled</Button>
+<Button disabled size="md" >Disabled</Button> 
+</>
 )}
 `
 const textSizes=`
  import {Button} from "must-ui/button"
  export const ButtonUsage=()=>{
  return(
+<>
 <Button variant="outline" size="sm" >Small</Button>
 <Button variant="outline" size="md" >Medium</Button>
 <Button variant="outline"  size="lg" >Large</Button>
-<Button variant="outline" size="icon">Icon</Button>
+<Button variant="outline" size="icon">Icon</Button> 
+</>
 )}
 `
 
@@ -154,11 +158,13 @@ const onCopySizes=()=>{
  import {Button} from "must-ui/button"
  export const ButtonUsage=()=>{
  return(
+<>
 <Button variant="outline" size="md" >Outline</Button>
 <Button variant="primary" size="md" >Primary</Button>
 <Button variant="secondary" size="md">Primary</Button>
 <Button variant="danger" size="md" >Danger</Button>
-<Button disabled size="md" >Disabled</Button>
+<Button disabled size="md" >Disabled</Button> 
+</>
 )}
           
   `}
@@ -197,10 +203,12 @@ const onCopySizes=()=>{
  import {Button} from "must-ui/button"
  export const ButtonUsage=()=>{
  return(
+<>
 <Button variant="outline" size="sm" >Small</Button>
 <Button variant="outline" size="md" >Medium</Button>
 <Button variant="outline"  size="lg" >Large</Button>
 <Button variant="outline" size="icon">Icon</Button>
+</>
 )}
           
   `}

@@ -2,7 +2,6 @@
 
 import { ThemeToggle } from "@/components/theme-toggle"
 import { Dialog, DialogCancel, DialogContent, DialogDescription, DialogFooter, DialogSubmit, DialogTitle, DialogTrigger } from "must-ui/dialog"
-import { ModalProvider } from "@/provider/modal-provider"
 import { CircleAlertIcon, Code, Copy, CopyCheck} from "lucide-react"
 import { Button } from "must-ui/button"
 import { Installation } from "@/components/installation"

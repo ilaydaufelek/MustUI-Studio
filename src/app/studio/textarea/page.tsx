@@ -122,12 +122,17 @@ const onCopyVariants=()=>{
      <div className="relative" >
     <div className="border  border-zinc-600/15 rounded-md   h-[360px] overflow-hidden" >
    {variants==="preview" && (
-    <div className="h-full grid grid-cols-1 md:grid-cols-3 p-6 gap-3 place-items-center overflow-y-auto no-scrollbar" >
- <Textarea className="focus:ring-blue-300 focus:dark:ring-blue-600/40  focus:border-blue-500 dark:focus:border-blue-700 " />
- <Textarea  className=" focus:ring-pink-300 focus:dark:ring-pink-400/40  focus:border-pink-500 dark:focus:border-pink-700" placeholder="Try writing something" />
-  <Textarea defaultValue={"hello!"} />
-
-    </div>
+<div className="h-full w-full grid grid-cols-1 md:grid-cols-3 p-6 gap-3 items-center justify-items-center overflow-y-auto no-scrollbar">
+  <div className="w-full flex items-center justify-center">
+    <Textarea className="w-full focus:ring-blue-300 focus:dark:ring-blue-600/40 focus:border-blue-500 dark:focus:border-blue-700" />
+  </div>
+  <div className="w-full flex items-center justify-center">
+    <Textarea className="w-full focus:ring-pink-300 focus:dark:ring-pink-400/40 focus:border-pink-500 dark:focus:border-pink-700" placeholder="Try writing something" />
+  </div>
+  <div className="w-full flex items-center justify-center">
+    <Textarea className="w-full" defaultValue={"hello!"} />
+  </div>
+</div>
    )}
    {variants==='code' &&(
     <div className=" h-full overflow-y-auto no-scrollbar ">

@@ -113,7 +113,7 @@ export const SheetContent = ({
       document.body.style.overflow = ""
     }
   }, [ctx.open])
-
+  
   return (
     <div
       onClick={() => ctx.setOpen(false)}
@@ -122,10 +122,10 @@ export const SheetContent = ({
         ctx.open ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none transition-opacity duration-300"
       )}
     >
-      {/* overlay */}
+      
       <div className="absolute inset-0 backdrop-blur-md bg-black/30" />
 
-      {/* panel */}
+    
       <div
         onClick={(e) => e.stopPropagation()}
         className={cn(

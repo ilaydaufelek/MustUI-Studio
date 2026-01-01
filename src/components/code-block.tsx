@@ -22,7 +22,7 @@ const CodeBlock = ({ children, className }: CodeBlockProps) => {
         wrapLines
        lineProps={(lineNumber)=>{
        const line=lines[lineNumber-1]
-        if (line?.includes("multiple")) {
+        if (line?.includes("multiple") || line?.includes("side")) {
             return {
               style: {
                 backgroundColor: isDark

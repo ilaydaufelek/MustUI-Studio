@@ -14,7 +14,7 @@ import {
 DropdownMenu,
 DropdownMenuContent,
 DropdownMenuItem, 
-DropdownMenuTrigger } from "@/library/components/dropdown"
+DropdownMenuTrigger } from "must-ui/dropdown"
 
 export const DropdownUsage=()=>{
 return(
@@ -35,7 +35,7 @@ import {
 DropdownMenu,
 DropdownMenuContent,
 DropdownMenuItem, 
-DropdownMenuTrigger } from "@/library/components/dropdown"
+DropdownMenuTrigger } from "must-ui/dropdown"
 import { ChevronDown} from "lucide-react"
 
 
@@ -67,7 +67,7 @@ import {
 DropdownMenu,
 DropdownMenuContent,
 DropdownMenuItem, 
-DropdownMenuTrigger } from "@/library/components/dropdown"
+DropdownMenuTrigger } from "must-ui/dropdown"
 
 
 
@@ -182,7 +182,7 @@ const DropdownPage=()=>{
 import { DropdownMenu,
 DropdownMenuContent,
 DropdownMenuItem, 
-DropdownMenuTrigger } from "@/library/components/dropdown"
+DropdownMenuTrigger } from "must-ui/dropdown"
 
  export const DropdownUsage=()=>{
 return(
@@ -242,7 +242,7 @@ import {
 DropdownMenu,
 DropdownMenuContent,
 DropdownMenuItem, 
-DropdownMenuTrigger } from "@/library/components/dropdown"
+DropdownMenuTrigger } from "must-ui/dropdown"
 import { ChevronDown} from "lucide-react"
 
 
@@ -316,7 +316,7 @@ import {
 DropdownMenu,
 DropdownMenuContent,
 DropdownMenuItem, 
-DropdownMenuTrigger } from "@/library/components/dropdown"
+DropdownMenuTrigger } from "must-ui/dropdown"
 
 
 

@@ -57,6 +57,24 @@ const sides: Record<string, string> = {
   top: "top-0 w-screen min-h-[260px] max-h-[380px] ",
   bottom: "bottom-0 w-screen min-h-[260px] max-h-[380px] "
 }
+const sideAnimation = {
+  left: {
+    open: "translate-x-0",
+    closed: "-translate-x-full",
+  },
+  right: {
+    open: "translate-x-0",
+    closed: "translate-x-full",
+  },
+  top: {
+    open: "translate-y-0",
+    closed: "-translate-y-full",
+  },
+  bottom: {
+    open: "translate-y-0",
+    closed: "translate-y-full",
+  },
+}
 
 export  const SheetContext=createContext<SheetContextProps | null> (null) 
 
@@ -81,44 +99,47 @@ export const SheetTrigger=({children,className, ...props}:SheetTriggerProps)=>{
   )
 }
 
-export const SheetContent=({children,className, side='right',...props }:SheetContentProps)=>{
-  const ctx=useContext(SheetContext)
-  if(!ctx) throw new Error("Sheet Content must be used within Sheet ")
-    useEffect(()=> {
-    if(ctx.open){
-      document.body.style.overflow="hidden"
-    }
-    else{
-      document.body.style.overflow=""
-    }
-    return()=>{
-      document.body.style.overflow=""
-    }
-  },[ctx.open])
+export const SheetContent = ({
+  children,
+  className,
+  side = "right",
+}: SheetContentProps) => {
+  const ctx = useContext(SheetContext)
+  if (!ctx) throw new Error("Sheet Content must be used within Sheet")
 
-  if(!ctx.open) return null
+  useEffect(() => {
+    document.body.style.overflow = ctx.open ? "hidden" : ""
+    return () => {
+      document.body.style.overflow = ""
+    }
+  }, [ctx.open])
 
-  
-
-  return(
-       <div onClick={()=>ctx.setOpen(false)}
-    className="fixed inset-0 z-50 backdrop-blur-md  "
-    {...props}>
-  
+  return (
     <div
+      onClick={() => ctx.setOpen(false)}
+      className={cn(
+        "fixed inset-0 z-50 ",
+        ctx.open ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none transition-opacity duration-300"
+      )}
+    >
+      {/* overlay */}
+      <div className="absolute inset-0 backdrop-blur-md bg-black/30" />
+
+      {/* panel */}
+      <div
         onClick={(e) => e.stopPropagation()}
-        className={cn(`absolute p-2 h-[100dvh] max-h-[100dvh]   bg-white dark:bg-black
-          shadow-md border border-zinc-600/20 flex flex-col`,
+        className={cn(
+          "absolute p-2 h-[100dvh] bg-white dark:bg-black shadow-md border border-zinc-600/20 flex flex-col",
+          "transition-transform duration-300 ease-out",
           sides[side],
+          ctx.open ? sideAnimation[side].open : sideAnimation[side].closed,
           className
         )}
-        {...props}
       >
-      {children}
+        {children}
+      </div>
     </div>
-  </div>
   )
-
 }
 
 export const SheetHeader=({children,className,...props}:SheetHeaderProps)=>{

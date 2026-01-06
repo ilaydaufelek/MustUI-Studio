@@ -20,15 +20,14 @@ const StudioPage = () => {
     <div className=" relative min-h-screen ">
    <div className="absolute inset-0 z-0 h-full w-full bg-white bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px] dark:bg-black dark:bg-[radial-gradient(#19191c_1px,transparent_1px)]  "></div>
    <div className="relative z-10" >
-       <header className="   w-full  text-black dark:text-white h-[60px] flex items-center justify-end space-x-6 p-2">
-       <p onClick={()=>router.push('')} className="text-sm font-semibold underline cursor-pointer  " >Installation</p>
-        <span className="m-2" ><ThemeToggle/></span>
-      </header>
-      <div className="  w-full  flex flex-col items-center justify-center mt-12 space-y-6  " >
-        <div className=" text-5xl md:text-7xl  font-bold text-center   " >
+    <header className="   w-full  text-black dark:text-white h-[60px] flex items-center justify-end space-x-6 p-2">
+    <span className="m-2" ><ThemeToggle/></span>
+    </header>
+    <div className="  w-full  flex flex-col items-center justify-center mt-12 space-y-6  " >
+    <div className=" text-5xl md:text-7xl  font-bold text-center   " >
         MustUI Studio
-        </div>
-        <p className=" text-center text-lg text-zinc-400 dark:text-zinc-300 text-md md:text-lg  max-w-3xl  leading-relaxed font-semibold  " >
+    </div>
+      <p className=" text-center text-lg text-zinc-400 dark:text-zinc-300 text-md md:text-lg  max-w-3xl  leading-relaxed font-semibold  " >
           A modern, open-source UI toolkit for building sleek and fast applications.
         </p>
          <Button className="" onClick={() =>

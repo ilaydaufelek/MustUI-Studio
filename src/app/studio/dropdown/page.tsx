@@ -93,16 +93,52 @@ return(
 </DropdownMenu>
 </div>
 )}` 
+
+const copyDropdownLeftRight= `
+import { 
+DropdownMenu,
+DropdownMenuContent,
+DropdownMenuItem, 
+DropdownMenuTrigger } from "must-ui/dropdown"
+
+
+
+export const DropdownUsage=()=>{
+return(
+ <div className="h-full flex items-center justify-center  flex-col gap-4 md:flex-row " >
+<DropdownMenu>
+<DropdownMenuTrigger>DropdownMenu Left </DropdownMenuTrigger>
+<DropdownMenuContent side="left" >
+<DropdownMenuItem> Item1 </DropdownMenuItem>
+<DropdownMenuItem>Item2</DropdownMenuItem>
+<DropdownMenuItem>Item3</DropdownMenuItem>
+</DropdownMenuContent>
+</DropdownMenu>
+
+<DropdownMenu>
+<DropdownMenuTrigger>DropdownMenu Right </DropdownMenuTrigger>
+<DropdownMenuContent side="right" >
+<DropdownMenuItem> Item1 </DropdownMenuItem>
+<DropdownMenuItem>Item2</DropdownMenuItem>
+<DropdownMenuItem>Item3</DropdownMenuItem>
+</DropdownMenuContent>
+</DropdownMenu>
+</div>
+)}` 
     
 
 const DropdownPage=()=>{
-    const [open, setOpen] = useState(false)
+  const [open, setOpen] = useState(false)
   const[usage,setUsage]=useState<'preview' | 'code'>("preview")
   const[dropdownI,setDropdownI]=useState<'preview' | 'code'>("preview")
-    const[dropdownTop,setDropdownTop]=useState<'preview' | 'code'>("preview")
+  const[dropdownTop,setDropdownTop]=useState<'preview' | 'code'>("preview")
+  const[dropdownLeft,setDropdownLeft]=useState<'preview' | 'code'>("preview")
+
    const [onCopyUsage,setCopyUsage]=useState(false)
-    const [onCopyDropdownI,setCopyDropdownI]=useState(false)
-     const [onCopyDropdownTop,setCopyDropdownTop]=useState(false)
+   const [onCopyDropdownI,setCopyDropdownI]=useState(false)
+   const [onCopyDropdownTop,setCopyDropdownTop]=useState(false)
+   const [onCopyDropdownLeft,setCopyDropdownLeft]=useState(false)
+
    const copyUsage=()=>{
   navigator.clipboard.writeText(usageCopy)
  setCopyUsage(true)
@@ -123,6 +159,14 @@ const DropdownPage=()=>{
    setCopyDropdownTop(true)
   setTimeout(()=>{
   setCopyDropdownTop(false) 
+  },5000)
+ }
+
+     const copyDropdownLeft=()=>{
+  navigator.clipboard.writeText(copyDropdownLeftRight)
+   setCopyDropdownLeft(true)
+  setTimeout(()=>{
+  setCopyDropdownLeft(false) 
   },5000)
  }
     return(
@@ -274,7 +318,7 @@ h-4 w-4 transition-transform duration-200
 </div>
 
       </div>
-        <div className="mt-3 md:mt-6 ">
+    <div className="mt-3 md:mt-6 ">
   <p className="text-2xl font-semibold" >Dropdown Side:Top & Bottom </p>
   </div> 
     <div className="space-x-3 mt-1 " >
@@ -335,6 +379,81 @@ return(
 <DropdownMenu>
 <DropdownMenuTrigger>DropdownMenu Bottom </DropdownMenuTrigger>
 <DropdownMenuContent side="bottom" >
+<DropdownMenuItem> Item1 </DropdownMenuItem>
+<DropdownMenuItem>Item2</DropdownMenuItem>
+<DropdownMenuItem>Item3</DropdownMenuItem>
+</DropdownMenuContent>
+</DropdownMenu>
+</div>
+)}`}       
+
+</CodeBlock>
+</div>)}
+</div>
+
+      </div>
+
+      <div className="mt-3 md:mt-6 ">
+  <p className="text-2xl font-semibold" >Dropdown Side:Left & Right </p>
+  </div> 
+    <div className="space-x-3 mt-1 " >
+      <button onClick={()=>setDropdownLeft('preview')} className={`font-semibold  ${dropdownLeft==='preview' ? ' text-zinc-800 dark:text-zinc-100' : ' text-zinc-400 dark:text-zinc-500'} `} >Preview</button>
+      <button onClick={()=>setDropdownLeft('code')}className={`font-semibold  ${dropdownLeft==='code' ? ' text-zinc-800 dark:text-zinc-100' : ' text-zinc-400 dark:text-zinc-500'} `} >Code</button>
+      </div>
+      <div className="relative" >
+       <div className="border  border-zinc-600/15 rounded-md   h-[360px] overflow-hidden mt-3 mb-4 " >
+       {dropdownLeft==='preview' && (
+        <div className="h-full flex items-center justify-center  flex-col gap-4 md:flex-row " >
+<DropdownMenu>
+<DropdownMenuTrigger>DropdownMenu Left </DropdownMenuTrigger>
+<DropdownMenuContent side="left" >
+<DropdownMenuItem> Item1 </DropdownMenuItem>
+<DropdownMenuItem>Item2</DropdownMenuItem>
+<DropdownMenuItem>Item3</DropdownMenuItem>
+</DropdownMenuContent>
+</DropdownMenu>
+<DropdownMenu>
+<DropdownMenuTrigger>DropdownMenu Right </DropdownMenuTrigger>
+<DropdownMenuContent side="right" >
+<DropdownMenuItem> Item1 </DropdownMenuItem>
+<DropdownMenuItem>Item2</DropdownMenuItem>
+<DropdownMenuItem>Item3</DropdownMenuItem>
+</DropdownMenuContent>
+</DropdownMenu>
+
+  </div>
+
+       )}
+       {dropdownLeft==='code' &&(
+        <div className="h-full overflow-y-auto no-scrollbar">
+      <button  onClick={copyDropdownLeft} className="absolute right-0 top-0 m-2" >
+    {onCopyDropdownLeft? <CopyCheck className="w-8 h-8 rounded-md transition-colors hover:bg-zinc-600/20 p-2  " /> : <Copy className="w-8 h-8 rounded-md  transition-colors hover:bg-zinc-600/20 p-2" /> }
+    </button>
+          <CodeBlock className="h-full" >
+         {`
+import { 
+DropdownMenu,
+DropdownMenuContent,
+DropdownMenuItem, 
+DropdownMenuTrigger } from "must-ui/dropdown"
+
+
+
+export const DropdownUsage=()=>{
+return(
+ <div className="h-full flex items-center justify-center  flex-col gap-4 md:flex-row " >
+<DropdownMenu>
+<DropdownMenuTrigger>DropdownMenu Left </DropdownMenuTrigger>
+<DropdownMenuContent side="left" >
+<DropdownMenuItem> Item1 </DropdownMenuItem>
+<DropdownMenuItem>Item2</DropdownMenuItem>
+<DropdownMenuItem>Item3</DropdownMenuItem>
+</DropdownMenuContent>
+</DropdownMenu>
+
+<DropdownMenu>
+<DropdownMenuTrigger>DropdownMenu Right </DropdownMenuTrigger>
+<DropdownMenuContent side="right" >
 <DropdownMenuItem> Item1 </DropdownMenuItem>
 <DropdownMenuItem>Item2</DropdownMenuItem>
 <DropdownMenuItem>Item3</DropdownMenuItem>

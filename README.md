@@ -1,6 +1,6 @@
-# must-ui-studio
+# MustUI-Studio
 
-**must-ui-studio** is a development environment where the components of the `must-ui` React UI library are showcased, tested, and documented.
+**MustUI-Studio** is a development environment where the components of the `must-ui` React UI library are showcased, tested, and documented.
 
 This project is not a UI library.  
 The actual library is the **must-ui** npm package.

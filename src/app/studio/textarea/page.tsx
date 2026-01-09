@@ -114,7 +114,7 @@ const onCopyVariants=()=>{
      </div>
           <div className="mt-3 md:mt-6 ">
     <p className="text-2xl font-semibold" >Textarea Variants</p>
-    </div>
+    </div> 
   <div className="space-x-3 mt-1 " >
   <button onClick={()=>setVariants('preview')} className={`font-semibold  ${variants==='preview' ? ' text-zinc-800 dark:text-zinc-100' : ' text-zinc-400 dark:text-zinc-500'} `} >Preview</button>
   <button onClick={()=>setVariants('code')}className={`font-semibold  ${variants==='code' ? ' text-zinc-800 dark:text-zinc-100' : ' text-zinc-400 dark:text-zinc-500'} `} >Code</button>

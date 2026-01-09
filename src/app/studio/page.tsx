@@ -75,12 +75,7 @@ const StudioPage = () => {
        </div>
 
        
-       <div className=" text-center space-y-3" >
-       <div onClick={()=>router.push('/studio/textarea')} className="border border-zinc-300 dark:border-zinc-800 rounded-md bg-zinc-50 dark:bg-zinc-900 w-full h-[200px] flex items-center justify-center cursor-pointer  transition-all" >
-        <img className="w-[150px]  " src="textarea.png" alt="" />
-       </div>
-      <p onClick={()=>router.push('/studio/textarea')} className="text-sm font-semibold hover:underline cursor-pointer " >Textarea</p>
-       </div>
+      
 
         <div className=" text-center space-y-3" >
        <div onClick={()=>router.push('/studio/sheet')} className="border border-zinc-300 dark:border-zinc-800 rounded-md bg-zinc-50 dark:bg-zinc-900 w-full h-[200px] flex items-center justify-center cursor-pointer  transition-all" >
@@ -89,6 +84,18 @@ const StudioPage = () => {
       <p onClick={()=>router.push('/studio/sheet')} className="text-sm font-semibold hover:underline cursor-pointer " >Sheet</p>
        </div>
          
+          <div className=" text-center space-y-3" >
+       <div onClick={()=>router.push('/studio/textarea')} className="border border-zinc-300 dark:border-zinc-800 rounded-md bg-zinc-50 dark:bg-zinc-900 w-full h-[200px] flex items-center justify-center cursor-pointer  transition-all" >
+        <img className="w-[150px]  " src="textarea.png" alt="" />
+       </div>
+      <p onClick={()=>router.push('/studio/textarea')} className="text-sm font-semibold hover:underline cursor-pointer " >Textarea</p>
+       </div>
+        <div className=" text-center space-y-3" >
+       <div onClick={()=>router.push('/studio/upload')} className="border border-zinc-300 dark:border-zinc-800 rounded-md bg-zinc-50 dark:bg-zinc-900 w-full h-[200px] flex items-center justify-center cursor-pointer  transition-all" >
+        <img className="w-[150px]  " src="textarea.png" alt="" />
+       </div>
+      <p onClick={()=>router.push('/studio/textarea')} className="text-sm font-semibold hover:underline cursor-pointer " >Upload</p>
+       </div>
       </div>
       </div>
      </div>

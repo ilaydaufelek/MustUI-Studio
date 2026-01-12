@@ -57,6 +57,8 @@ export const Upload = ({ onChange, value, multiple = false, ...props }: UploadPr
 
   }
 
+  
+
   return (
     <div className="inline-block space-y-2">
       <input
@@ -64,19 +66,19 @@ export const Upload = ({ onChange, value, multiple = false, ...props }: UploadPr
         type="file"
         multiple={multiple}
         onChange={handleChange}
-        className="hidden"
+        className="hidden "
         {...props}
       />
-<div className="w-[56px]" >
+<div className="w-[100px] flex flex-col " >
     
-      <AnimatePresence>
+      <AnimatePresence mode="popLayout" >
         {files.map((file, index) => (
           <motion.div
             key={file.name + index}
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.9 }}
-            transition={{ duration: 0.2 }}
+            transition={{ duration: 0.2}}
             className="border border-zinc-800/20 rounded-md m-1 flex items-center gap-2 px-2 py-1 min-w-52 max-w-64"
           >
             {file.type.startsWith("image/") && preview[index] && (
@@ -88,7 +90,7 @@ export const Upload = ({ onChange, value, multiple = false, ...props }: UploadPr
                 <button
                   type="button"
                   onClick={() => setOpen(index)}
-                  className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 flex items-center justify-center rounded-md transition"
+                  className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 flex items-center justify-center rounded-md "
                 >
                   <Eye className="w-5 h-5 text-white" />
                 </button>
@@ -104,7 +106,7 @@ export const Upload = ({ onChange, value, multiple = false, ...props }: UploadPr
               onClick={() => handleRemove(index)}
               className="flex-shrink-0"
             >
-              <Trash className="w-4 h-4 text-red-500" />
+              <Trash className="w-4 h-4 text-red-500 cursor-pointer" />
             </button>
           </motion.div>
         ))}
@@ -119,7 +121,7 @@ export const Upload = ({ onChange, value, multiple = false, ...props }: UploadPr
           <img
             src={preview[open]}
             onClick={(e) => e.stopPropagation()}
-            className="max-w-[90vw] max-h-[90vh] rounded"
+            className="max-w-[90vw] max-h-[90vh]"
           />
         </div>
       )}
@@ -128,7 +130,7 @@ export const Upload = ({ onChange, value, multiple = false, ...props }: UploadPr
       <button
         type="button"
         onClick={() => inputRef.current?.click()}
-        className="px-4 py-2 border border-zinc-700 rounded-md text-sm flex items-center gap-2"
+        className="px-4 py-2 border  border-zinc-700 rounded-md text-sm flex items-center gap-2"
       >
         Upload
         <ArrowUpFromLine className="w-4 h-4" />

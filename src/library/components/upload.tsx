@@ -3,8 +3,9 @@
 import React, { useEffect, useRef, useState } from "react"
 import { ArrowUpFromLine, Eye, Trash } from "lucide-react"
 import { motion, AnimatePresence } from "framer-motion"
+import { cn } from "@/lib/utils"
 
-export interface UploadProps
+interface UploadProps
   extends Omit<
     React.InputHTMLAttributes<HTMLInputElement>,
     "type" | "value" | "onChange" | "multiple"
@@ -16,9 +17,10 @@ export interface UploadProps
   helperText?: string
   error?: string
   text?:string
+  className?:string
 }
 
-export const Upload = ({ onChange, value,text='Upload', multiple = false, ...props }: UploadProps) => {
+export const Upload = ({ onChange,className, value,text='Upload', multiple = false, ...props }: UploadProps) => {
   const inputRef = useRef<HTMLInputElement>(null)
   const [preview, setPreview] = useState<string[]>([])
   const [open, setOpen] = useState<number| null>(null)
@@ -131,7 +133,7 @@ export const Upload = ({ onChange, value,text='Upload', multiple = false, ...pro
       <button
         type="button"
         onClick={() => inputRef.current?.click()}
-        className="px-4 py-2 border  border-zinc-700 rounded-md text-sm flex items-center gap-2"
+        className={cn("px-4 py-2 border  border-zinc-700 rounded-md text-sm flex items-center gap-2",className)}
       >
        {text}
         <ArrowUpFromLine className="w-4 h-4" />

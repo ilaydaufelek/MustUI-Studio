@@ -15,9 +15,10 @@ export interface UploadProps
   label?: string
   helperText?: string
   error?: string
+  text?:string
 }
 
-export const Upload = ({ onChange, value, multiple = false, ...props }: UploadProps) => {
+export const Upload = ({ onChange, value,text='Upload', multiple = false, ...props }: UploadProps) => {
   const inputRef = useRef<HTMLInputElement>(null)
   const [preview, setPreview] = useState<string[]>([])
   const [open, setOpen] = useState<number| null>(null)
@@ -132,7 +133,7 @@ export const Upload = ({ onChange, value, multiple = false, ...props }: UploadPr
         onClick={() => inputRef.current?.click()}
         className="px-4 py-2 border  border-zinc-700 rounded-md text-sm flex items-center gap-2"
       >
-        Upload
+       {text}
         <ArrowUpFromLine className="w-4 h-4" />
       </button>
     </div>

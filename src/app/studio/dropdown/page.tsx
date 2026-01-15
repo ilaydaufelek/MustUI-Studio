@@ -6,7 +6,7 @@ import { Button } from "must-ui/button"
 import { Installation } from "@/components/installation"
 import { useState } from "react"
 import CodeBlock from "@/components/code-block"
-import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/library/components/dropdown"
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "must-ui/dropdown"
 
 
 const usageCopy=`

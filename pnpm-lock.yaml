@@ -18,8 +18,8 @@ importers:
         specifier: ^0.544.0
         version: 0.544.0(react@19.1.0)
       must-ui:
-        specifier: ^2.1.3
-        version: 2.1.3(react@19.1.0)
+        specifier: ^2.2.3
+        version: 2.2.3(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
       next:
         specifier: 16.0.8
         version: 16.0.8(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
@@ -1119,6 +1119,20 @@ packages:
       react-dom:
         optional: true
 
+  framer-motion@12.26.0:
+    resolution: {integrity: sha512-yFatQro5/mNKVqBT/IAMq9v27z4dJsjKklnsCu7mdp2mrn78UW3mkG4qfmmLxHzh6WMts1o+A4FH4Iiomt/jFQ==}
+    peerDependencies:
+      '@emotion/is-prop-valid': '*'
+      react: ^18.0.0 || ^19.0.0
+      react-dom: ^18.0.0 || ^19.0.0
+    peerDependenciesMeta:
+      '@emotion/is-prop-valid':
+        optional: true
+      react:
+        optional: true
+      react-dom:
+        optional: true
+
   function-bind@1.1.2:
     resolution: {integrity: sha512-7XHNxH7qX9xG5mIwxkhumTox/MIRNcOgDrxWsMt2pAr23WHp6MrRlN7FBSFpCpr+oVO0F744iUgR82nJMfG2SA==}
 
@@ -1523,14 +1537,20 @@ packages:
   motion-dom@12.23.21:
     resolution: {integrity: sha512-5xDXx/AbhrfgsQmSE7YESMn4Dpo6x5/DTZ4Iyy4xqDvVHWvFVoV+V2Ri2S/ksx+D40wrZ7gPYiMWshkdoqNgNQ==}
 
+  motion-dom@12.24.11:
+    resolution: {integrity: sha512-DlWOmsXMJrV8lzZyd+LKjG2CXULUs++bkq8GZ2Sr0R0RRhs30K2wtY+LKiTjhmJU3W61HK+rB0GLz6XmPvTA1A==}
+
   motion-utils@12.23.6:
     resolution: {integrity: sha512-eAWoPgr4eFEOFfg2WjIsMoqJTW6Z8MTUCgn/GZ3VRpClWBdnbjryiA3ZSNLyxCTmCQx4RmYX6jX1iWHbenUPNQ==}
+
+  motion-utils@12.24.10:
+    resolution: {integrity: sha512-x5TFgkCIP4pPsRLpKoI86jv/q8t8FQOiM/0E8QKBzfMozWHfkKap2gA1hOki+B5g3IsBNpxbUnfOum1+dgvYww==}
 
   ms@2.1.3:
     resolution: {integrity: sha512-6FlzubTLZG3J2a/NVCAleEhjzq5oxgHyaCU9yYXvcLsvoVaHJq/s5xXI6/XXP6tz7R9xAOtHnSO/tXtF3WRTlA==}
 
-  must-ui@2.1.3:
-    resolution: {integrity: sha512-yBSdQFI9VT40rB3x+ujEgX8z5EVpHL+cD//N7EN4urpmgGvlrJKksmI3Ih7uNYhFl1WVupvgkHyhmDj8FxIOGQ==}
+  must-ui@2.2.3:
+    resolution: {integrity: sha512-Zou/gFfY3QQqG7Xu4ju6evs8VRdsaUgPTwML7yu1YVCzM/bcjUrbHR5XGHFhQeuzM9fM38QP2L2NWjXjjiqSrw==}
     peerDependencies:
       react: '>=18'
 
@@ -3134,6 +3154,15 @@ snapshots:
       react: 19.1.0
       react-dom: 19.1.0(react@19.1.0)
 
+  framer-motion@12.26.0(react-dom@19.1.0(react@19.1.0))(react@19.1.0):
+    dependencies:
+      motion-dom: 12.24.11
+      motion-utils: 12.24.10
+      tslib: 2.8.1
+    optionalDependencies:
+      react: 19.1.0
+      react-dom: 19.1.0(react@19.1.0)
+
   function-bind@1.1.2: {}
 
   function.prototype.name@1.1.8:
@@ -3527,15 +3556,25 @@ snapshots:
     dependencies:
       motion-utils: 12.23.6
 
+  motion-dom@12.24.11:
+    dependencies:
+      motion-utils: 12.24.10
+
   motion-utils@12.23.6: {}
+
+  motion-utils@12.24.10: {}
 
   ms@2.1.3: {}
 
-  must-ui@2.1.3(react@19.1.0):
+  must-ui@2.2.3(react-dom@19.1.0(react@19.1.0))(react@19.1.0):
     dependencies:
       clsx: 2.1.1
+      framer-motion: 12.26.0(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
       lucide-react: 0.555.0(react@19.1.0)
       react: 19.1.0
+    transitivePeerDependencies:
+      - '@emotion/is-prop-valid'
+      - react-dom
 
   nanoid@3.3.11: {}
 

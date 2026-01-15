@@ -5,6 +5,7 @@ import { Installation } from "@/components/installation"
 import { useState } from "react"
 import CodeBlock from "@/components/code-block"
 import { Copy, CopyCheck } from "lucide-react"
+import PropsTable from "@/components/component-docs"
 
 
 const textUsage=`
@@ -143,7 +144,7 @@ const onCopySizes=()=>{
    <div className=" h-full grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 p-6 gap-3 place-items-center">
   <Button variant="outline" size="md">Outline</Button>
   <Button variant="primary" size="md">Primary</Button>
-   <Button variant="secondary" size="md">Primary</Button>
+   <Button variant="secondary" size="md">Secondary</Button>
   <Button variant="danger" size="md">Danger</Button>
   <Button disabled size="md">Disabled</Button>
 </div>
@@ -218,10 +219,38 @@ const onCopySizes=()=>{
 
       </div>
     </div> 
-         
-          
+          <div className="mt-3 md:mt-6 ">
+    <p className="text-2xl font-semibold" >API Reference</p>
+    </div>
+        <PropsTable
+  items={[
+    {
+      prop: "variant",
+      type: [
+        "outline",
+        "primary",
+        "secondary",
+        "danger",
+       "disabled"
+      ],
+    },
+    {
+      prop: "size",
+      type: [
+        "sm",
+        "md", 
+        "lg",
+        "icon",
+       
+        
+      ],
+    },
+    
+  ]}
+/>   
       
       </div>
+     
      
    </div>
    </div>

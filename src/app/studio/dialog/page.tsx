@@ -108,7 +108,7 @@ const DialogPage=()=>{
       Dialog
         </div>
         <p className=" text-center text-lg text-zinc-400 dark:text-zinc-300 text-md md:text-lg  max-w-3xl  leading-relaxed font-semibold  " >
-       A collection of unique accordion components built with React and Tailwind CSS, designed for modern projects.
+       A collection of unique dialog components built with React and Tailwind CSS, designed for modern projects.
         </p>
          <Button className="" onClick={() =>
       window.open('https://github.com/ilaydaufelek/MustUI', '_blank', 'noopener,noreferrer')

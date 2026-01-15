@@ -13,10 +13,10 @@ export default function PropsTable({ items }: PropsTableProps) {
       <table className="w-full border-collapse text-sm">
         <thead className="bg-gray-50 dark:bg-black">
           <tr>
-            <th className="px-4 py-2 text-left font-medium text-gray-700">
+            <th className="px-4 py-2 text-left font-medium text-gray-700 dark:text-gray-400">
               Prop
             </th>
-            <th className="px-4 py-2 text-left font-medium text-gray-700">
+            <th className="px-4 py-2 text-left font-medium text-gray-700 dark:text-gray-400">
               Type
             </th>
           </tr>

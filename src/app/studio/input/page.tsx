@@ -1,6 +1,7 @@
 "use client"
 
 import CodeBlock from "@/components/code-block"
+import PropsTable from "@/components/component-docs"
 import { Installation } from "@/components/installation"
 import { ThemeToggle } from "@/components/theme-toggle"
 import { Copy, CopyCheck } from "lucide-react"
@@ -213,7 +214,33 @@ return(
       
             </div>
           </div> 
+            <div className="mt-3 md:mt-6 ">
+               <p className="text-2xl font-semibold" >API Reference</p>
+               </div>
+                   <PropsTable
+             items={[
+               {
+                 prop: "variant",
+                 type: [
+                   "filled",
+                   "elevated",
+                   "outlined",
+                 ],
+               },
+               {
+                 prop: "size",
+                 type: [
+                   "sm",
+                   "md", 
+                   "lg",
+                   "full",
+                  
+                   
+                 ],
+               },
                
+             ]}
+           />       
                 
             
             </div>
